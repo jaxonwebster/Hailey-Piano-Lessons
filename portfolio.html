@@ -9,19 +9,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Lilita+One&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>tailwind.config={theme:{extend:{colors:{palette:{blue:"#98CBE8",blueHover:"#84BDDD",blueDeep:"#1E5880",blueSoft:"#EEF6FB",blueBorder:"#C5E2F3",navy:"#1B1E38",butter:"#F9DF7B",butterHover:"#F2D463",butterBorder:"#F2DC87",butterSoft:"#FFFCEB",cream:"#FAF7F2",sand:"#F0EAE1",border:"#E8E1D7",muted:"#6B6864"}},fontFamily:{display:['"Lilita One"',"cursive","sans-serif"],serif:['"Fraunces"',"Georgia","serif"],sans:['"Plus Jakarta Sans"',"sans-serif"]}}}}</script>
-
-
-
 <style>
 .mobile-menu-link{opacity:0;transform:translateX(20px)}
 #mobileMenu.open .mobile-menu-link{animation:menuItemIn .32s ease forwards}
-#mobileMenu.open .mobile-menu-link:nth-child(1){animation-delay:.05s}#mobileMenu.open .mobile-menu-link:nth-child(2){animation-delay:.12s}#mobileMenu.open .mobile-menu-link:nth-child(3){animation-delay:.19s}#mobileMenu.open .mobile-menu-link:nth-child(4){animation-delay:.26s}
+#mobileMenu.open .mobile-menu-link:nth-child(1){animation-delay:.05s}
+#mobileMenu.open .mobile-menu-link:nth-child(2){animation-delay:.12s}
+#mobileMenu.open .mobile-menu-link:nth-child(3){animation-delay:.19s}
+#mobileMenu.open .mobile-menu-link:nth-child(4){animation-delay:.26s}
 @keyframes menuItemIn{to{opacity:1;transform:translateX(0)}}
 #mobileMenuPanel{transform:translateX(115%);opacity:0;transition:transform .3s ease,opacity .22s ease}
 #mobileMenu.open #mobileMenuPanel{transform:translateX(0);opacity:1;pointer-events:auto}
 </style>
 </head>
 <body class="bg-palette-cream text-palette-navy font-sans antialiased min-h-screen flex flex-col">
+
 <header class="sticky top-0 z-50 bg-palette-blueDeep border-b border-white/10 shadow-[0_5px_20px_rgba(27,30,56,.12)]">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
     <a href="index.html" class="group text-white">
@@ -29,7 +30,9 @@
       <span class="text-[10px] tracking-widest uppercase font-semibold text-white/65 block mt-1">Private Piano Instruction</span>
     </a>
     <nav class="hidden md:flex items-center space-x-6 text-xs uppercase tracking-wider font-bold">
-      <a href="index.html" class="text-white/75 hover:text-white transition">Home</a><a href="about.html" class="text-white/75 hover:text-white transition">About Hailey</a><a href="portfolio.html" class="text-white transition">Portfolio</a>
+      <a href="index.html" class="text-white/75 hover:text-white transition">Home</a>
+      <a href="about.html" class="text-white/75 hover:text-white transition">About Hailey</a>
+      <a href="portfolio.html" class="text-white transition">Portfolio</a>
       <a href="booking.html" class="bg-palette-butter hover:bg-palette-butterHover text-palette-navy px-4 py-2.5 rounded-xl border border-palette-butterBorder shadow-sm transition">Book Lessons</a>
     </nav>
     <button id="menuButton" class="md:hidden w-11 h-11 rounded-xl border border-white/20 flex flex-col items-center justify-center gap-1.5 hover:bg-white/10 transition" aria-label="Open menu" aria-expanded="false">
@@ -38,226 +41,177 @@
   </div>
   <div id="mobileMenu" class="md:hidden absolute right-3 top-[72px] pointer-events-none">
     <div id="mobileMenuPanel" class="w-64 bg-palette-blueDeep border border-white/15 rounded-2xl shadow-2xl p-2.5 overflow-hidden">
-      <nav class="space-y-1"><a href="index.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold text-white/80 hover:bg-white/10 hover:text-white">Home</a><a href="about.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold text-white/80 hover:bg-white/10 hover:text-white">About Hailey</a><a href="portfolio.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold bg-white/10 text-white">Portfolio</a><a href="booking.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold bg-palette-butter text-palette-navy hover:bg-palette-butterHover">Book Lessons →</a></nav>
+      <nav class="space-y-1">
+        <a href="index.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold text-white/80 hover:bg-white/10 hover:text-white">Home</a>
+        <a href="about.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold text-white/80 hover:bg-white/10 hover:text-white">About Hailey</a>
+        <a href="portfolio.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold bg-white/10 text-white">Portfolio</a>
+        <a href="booking.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold bg-palette-butter text-palette-navy hover:bg-palette-butterHover">Book Lessons →</a>
+      </nav>
     </div>
   </div>
 </header>
+
 <main class="flex-grow">
 <section class="max-w-5xl mx-auto px-4 py-14 sm:py-20">
   <div class="grid lg:grid-cols-12 gap-10 items-end">
-    <div class="lg:col-span-7"><p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep mb-3">Studio Portfolio</p><h1 class="font-serif text-4xl sm:text-5xl leading-tight">A growing life of <span class="font-display text-palette-blueDeep">music & teaching.</span></h1><p class="text-palette-muted mt-5 leading-relaxed max-w-2xl">A look at Hailey's experience, musical milestones, teaching values, and the kind of thoughtful studio environment she hopes to create for every student.</p></div>
+    <div class="lg:col-span-7">
+      <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep mb-3">Studio Portfolio</p>
+      <h1 class="font-serif text-4xl sm:text-5xl leading-tight">A growing life of <span class="font-display text-palette-blueDeep">music & teaching.</span></h1>
+      <p class="text-palette-muted mt-5 leading-relaxed max-w-2xl">A look at Hailey's experience, musical milestones, teaching values, and the kind of thoughtful studio environment she hopes to create for every student.</p>
+    </div>
   </div>
 </section>
-<section class="bg-white border-y border-palette-border"><div class="max-w-5xl mx-auto px-4 py-16">
-  <div class="text-center max-w-2xl mx-auto mb-10"><p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep mb-3">Highlights</p><h2 class="font-serif text-3xl sm:text-4xl">Experience that shapes the studio.</h2><p class="text-sm text-palette-muted mt-4">Use these cards for Hailey's real accomplishments, training, performances, awards, or meaningful musical milestones.</p></div>
-  <div class="grid md:grid-cols-3 gap-5">
-    <article class="group bg-palette-cream border border-palette-border rounded-2xl p-6 shadow-[0_4px_16px_rgba(27,30,56,.05)] hover:-translate-y-2 hover:shadow-[0_14px_32px_rgba(27,30,56,.11)] transition-all"><span class="text-[10px] font-bold uppercase tracking-[.18em] text-palette-blueDeep">Experience</span><h3 class="font-serif text-xl mt-3">15+ Years at the Piano</h3><p class="text-sm text-palette-muted leading-relaxed mt-3">Years of consistent playing, practice, performance, and musical growth provide the foundation for each lesson.</p></article>
-    <article class="group bg-palette-cream border border-palette-border rounded-2xl p-6 shadow-[0_4px_16px_rgba(27,30,56,.05)] hover:-translate-y-2 hover:shadow-[0_14px_32px_rgba(27,30,56,.11)] transition-all"><span class="text-[10px] font-bold uppercase tracking-[.18em] text-palette-blueDeep">Milestone</span><h3 class="font-serif text-xl mt-3">[Award or Accomplishment]</h3><p class="text-sm text-palette-muted leading-relaxed mt-3">Add a real recital, award, competition, certification, course, or other achievement that matters to Hailey's musical story.</p></article>
-    <article class="group bg-palette-cream border border-palette-border rounded-2xl p-6 shadow-[0_4px_16px_rgba(27,30,56,.05)] hover:-translate-y-2 hover:shadow-[0_14px_32px_rgba(27,30,56,.11)] transition-all"><span class="text-[10px] font-bold uppercase tracking-[.18em] text-palette-blueDeep">Teaching</span><h3 class="font-serif text-xl mt-3">Student-Centered Lessons</h3><p class="text-sm text-palette-muted leading-relaxed mt-3">Lessons balance technique, reading, confidence, and music students enjoy so progress feels both structured and personal.</p></article>
+
+<section class="bg-white border-y border-palette-border">
+  <div class="max-w-5xl mx-auto px-4 py-16">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep mb-3">Highlights</p>
+      <h2 class="font-serif text-3xl sm:text-4xl">Experience that shapes the studio.</h2>
+      <p class="text-sm text-palette-muted mt-4">Use these cards for Hailey's real accomplishments, training, performances, awards, or meaningful musical milestones.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5">
+      <article class="group bg-palette-cream border border-palette-border rounded-2xl p-6 shadow-[0_4px_16px_rgba(27,30,56,.05)] hover:-translate-y-2 hover:shadow-[0_14px_32px_rgba(27,30,56,.11)] transition-all">
+        <span class="text-[10px] font-bold uppercase tracking-[.18em] text-palette-blueDeep">Experience</span><h3 class="font-serif text-xl mt-3">15+ Years at the Piano</h3><p class="text-sm text-palette-muted leading-relaxed mt-3">Years of consistent playing, practice, performance, and musical growth provide the foundation for each lesson.</p>
+      </article>
+      <article class="group bg-palette-cream border border-palette-border rounded-2xl p-6 shadow-[0_4px_16px_rgba(27,30,56,.05)] hover:-translate-y-2 hover:shadow-[0_14px_32px_rgba(27,30,56,.11)] transition-all">
+        <span class="text-[10px] font-bold uppercase tracking-[.18em] text-palette-blueDeep">Milestone</span><h3 class="font-serif text-xl mt-3">[Award or Accomplishment]</h3><p class="text-sm text-palette-muted leading-relaxed mt-3">Add a real recital, award, competition, certification, course, or other achievement that matters to Hailey's musical story.</p>
+      </article>
+      <article class="group bg-palette-cream border border-palette-border rounded-2xl p-6 shadow-[0_4px_16px_rgba(27,30,56,.05)] hover:-translate-y-2 hover:shadow-[0_14px_32px_rgba(27,30,56,.11)] transition-all">
+        <span class="text-[10px] font-bold uppercase tracking-[.18em] text-palette-blueDeep">Teaching</span><h3 class="font-serif text-xl mt-3">Student-Centered Lessons</h3><p class="text-sm text-palette-muted leading-relaxed mt-3">Lessons balance technique, reading, confidence, and music students enjoy so progress feels both structured and personal.</p>
+      </article>
+    </div>
   </div>
-</div></section>
+</section>
+
+<!-- PERFORMANCE VIDEO SECTION -->
 <section class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
-  <div class="grid lg:grid-cols-12 gap-8 items-center">
+  <div class="grid lg:grid-cols-12 gap-8 lg:items-center">
 
-    <!-- MAIN CAROUSEL DISPLAY -->
-    <div class="lg:col-span-7">
-      <div class="relative overflow-hidden rounded-3xl shadow-[0_14px_35px_rgba(27,30,56,.12)] bg-palette-navy">
-        <div class="aspect-video relative">
+    <!-- On mobile this text appears FIRST. On desktop it stays on the right. -->
+    <div class="lg:col-span-5 lg:col-start-8 lg:row-start-1">
+      <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep mb-3">Performance Journal</p>
+      <h2 class="font-serif text-3xl">Hear Hailey play.</h2>
+      <p class="text-sm text-palette-muted leading-relaxed mt-4 lg:mb-6">
+        Select a performance to watch and listen to below.
+      </p>
+    </div>
 
-          <!-- Image slides use this element. -->
-          <img
-            id="portfolioImage"
-            src="https://images.unsplash.com/photo-1520523839898-50712825e617?auto=format&fit=crop&w=1400&q=80"
-            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
-            alt="Piano studio"
-          >
-
+    <!-- On mobile this video appears SECOND. On desktop it stays on the left. -->
+    <div class="lg:col-span-7 lg:col-start-1 lg:row-start-1 mt-6 lg:mt-0">
+      <div class="overflow-hidden rounded-3xl shadow-[0_14px_35px_rgba(27,30,56,.12)] bg-palette-navy">
+        <div class="aspect-video">
           <!--
-            YOUTUBE VIDEO PLAYER
-            --------------------
-            You DO NOT need to store video files on your website.
-            The iframe streams the video directly from YouTube.
-
-            JavaScript changes this iframe's src when a VIDEO thumbnail is selected.
-
-            IMPORTANT FOR TESTING:
-            Test this page through http://localhost or your deployed GitHub Pages URL.
-            Do not test YouTube embeds by opening the HTML as a file:// URL.
-            Example local command from this project's folder:
-                npx serve .
+            DEFAULT VIDEO:
+            This starts on Hailey's first real performance instead of a piano photo.
+            To change the default video, replace kMFb1hyYXqQ below.
+            Do NOT add autoplay=1 here: that prevents the page from suddenly playing
+            sound as soon as somebody visits. Clicking a thumbnail DOES autoplay it.
           -->
           <iframe
-  id="portfolioVideo"
-  class="absolute inset-0 w-full h-full hidden"
-  src="about:blank"
-  title="Hailey playing piano"
-  frameborder="0"
-  referrerpolicy="origin"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
-
-        </div>
-
-        <!-- Caption -->
-        <div id="portfolioCaptionBox" class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-palette-navy/90 to-transparent text-white pointer-events-none">
-          <p id="portfolioCaption" class="font-serif text-2xl">At the piano</p>
-          <p id="portfolioSubcaption" class="text-xs text-white/70 mt-1">A glimpse into the music behind the studio.</p>
+            id="portfolioVideo"
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/kMFb1hyYXqQ?playsinline=1&rel=0"
+            title="Hailey playing piano"
+            frameborder="0"
+            referrerpolicy="origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
     </div>
 
+    <!-- On mobile thumbnails appear THIRD, directly beneath the video. -->
+    <div class="lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:self-end mt-4 lg:mt-0 lg:pt-40">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3">
 
-    <!-- THUMBNAILS -->
-    <div class="lg:col-span-5">
-      <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep mb-3">
-        Performance Journal
-      </p>
-
-      <h2 class="font-serif text-3xl">
-        Hear Hailey play.
-      </h2>
-
-      <p class="text-sm text-palette-muted leading-relaxed mt-4 mb-6">
-        Select a photo or performance below. Video performances are streamed from YouTube,
-        so the video files do not need to be stored with this website.
-      </p>
-
-
-      <div class="grid grid-cols-3 gap-3">
-
-        <!-- ============================================================
-             PHOTO THUMBNAIL
-             Keep data-type="image" for regular photos.
-             ============================================================ -->
-        <button
-          type="button"
-          class="gallery-thumb rounded-xl overflow-hidden border-2 border-palette-blueDeep aspect-square relative group"
-          data-type="image"
-          data-src="https://images.unsplash.com/photo-1520523839898-50712825e617?auto=format&fit=crop&w=1400&q=80"
-          data-caption="At the piano"
-          data-subcaption="A glimpse into the music behind the studio.">
-
-          <img
-            src="https://images.unsplash.com/photo-1520523839898-50712825e617?auto=format&fit=crop&w=300&q=70"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            alt="Piano"
-          >
-        </button>
-
-
-        <!-- ============================================================
-             YOUTUBE VIDEO #1
-
-             HOW TO ADD YOUR VIDEO:
-
-             1. Open the video on YouTube.
-             2. Copy the VIDEO ID from the URL.
-
-                Example:
-                https://www.youtube.com/watch?v=dQw4w9WgXcQ
-
-                Video ID:
-                dQw4w9WgXcQ
-
-             3. Replace YOUR_YOUTUBE_VIDEO_ID_1 below with that ID.
-
-             IMPORTANT:
-             Paste ONLY the video ID, NOT the entire YouTube embed code.
-
-             The script automatically builds:
-             https://www.youtube.com/embed/VIDEO_ID?autoplay=1...
-
-             AUTOPLAY:
-             When this thumbnail is clicked, the video loads and begins
-             playing automatically.
-
-             NOTE:
-             Browsers can restrict autoplay with sound. Because the user
-             physically clicks the thumbnail first, autoplay is more likely
-             to be permitted, but browser rules still control final behavior.
-             ============================================================ -->
-        <button
-          type="button"
-          class="gallery-thumb rounded-xl overflow-hidden border-2 border-transparent aspect-square relative group bg-palette-navy"
-          data-type="youtube"
+        <!-- VIDEO THUMBNAIL #1
+             Replace the YouTube ID in BOTH data-youtube-id and img src when changing it. -->
+        <button type="button"
+          class="video-thumb rounded-xl overflow-hidden border-2 border-palette-blueDeep aspect-video relative group bg-palette-navy"
           data-youtube-id="kMFb1hyYXqQ"
-          data-caption="Performance #1"
-          data-subcaption="Hailey at the piano.">
-
-          <!--
-            OPTIONAL THUMBNAIL:
-            After adding the YouTube ID above, you can also replace
-            YOUR_YOUTUBE_VIDEO_ID_1 below. YouTube will provide the
-            thumbnail automatically.
-          -->
-          <img
-            src="https://img.youtube.com/vi/kMFb1hyYXqQ/hqdefault.jpg"
-            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
-            alt="Watch Hailey play piano"
-          >
-
-          <!-- Play icon -->
-          <span class="absolute inset-0 flex items-center justify-center">
-            <span class="w-11 h-11 rounded-full bg-white/90 text-palette-blueDeep flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-              ▶
-            </span>
-          </span>
+          aria-label="Play performance 1">
+          <img src="https://img.youtube.com/vi/kMFb1hyYXqQ/hqdefault.jpg" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" alt="Hailey piano performance 1">
+          <span class="absolute inset-0 flex items-center justify-center"><span class="w-10 h-10 rounded-full bg-white/90 text-palette-blueDeep flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">▶</span></span>
         </button>
 
-
-        <!-- ============================================================
-             YOUTUBE VIDEO #2
-
-             Replace YOUR_YOUTUBE_VIDEO_ID_2 in BOTH places below:
-             - data-youtube-id
-             - thumbnail image URL
-
-             You can duplicate this entire <button>...</button> block
-             whenever you want to add another performance.
-             ============================================================ -->
-        <button
-          type="button"
-          class="gallery-thumb rounded-xl overflow-hidden border-2 border-transparent aspect-square relative group bg-palette-navy"
-          data-type="youtube"
-          data-youtube-id="YOUR_YOUTUBE_VIDEO_ID_2"
-          data-caption="Performance #2"
-          data-subcaption="Another performance from Hailey.">
-
-          <img
-            src="https://img.youtube.com/vi/YOUR_YOUTUBE_VIDEO_ID_2/hqdefault.jpg"
-            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
-            alt="Watch another piano performance"
-          >
-
-          <span class="absolute inset-0 flex items-center justify-center">
-            <span class="w-11 h-11 rounded-full bg-white/90 text-palette-blueDeep flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-              ▶
-            </span>
-          </span>
+        <!-- VIDEO THUMBNAIL #2 -->
+        <button type="button"
+          class="video-thumb rounded-xl overflow-hidden border-2 border-transparent aspect-video relative group bg-palette-navy"
+          data-youtube-id="0mavnQciMwg"
+          aria-label="Play performance 2">
+          <img src="https://img.youtube.com/vi/0mavnQciMwg/hqdefault.jpg" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" alt="Hailey piano performance 2">
+          <span class="absolute inset-0 flex items-center justify-center"><span class="w-10 h-10 rounded-full bg-white/90 text-palette-blueDeep flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">▶</span></span>
         </button>
 
+        <!--
+          ADD ANOTHER VIDEO:
+          Copy one of the <button> blocks above.
+          Replace the YouTube video ID in:
+          1) data-youtube-id="..."
+          2) https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg
+        -->
       </div>
-
-
-      <!-- Helpful note -->
-      <div class="mt-5 rounded-xl border border-palette-border bg-white p-4">
-        <p class="text-xs font-bold text-palette-navy">
-          Photos + YouTube videos can be mixed together.
-        </p>
-        <p class="text-[11px] text-palette-muted leading-relaxed mt-1">
-          Selecting a video starts that YouTube performance. Selecting a photo stops the
-          current video and switches the display back to the image.
-        </p>
-      </div>
-
     </div>
-
   </div>
 </section>
-<section class="bg-white border-y border-palette-border"><div class="max-w-5xl mx-auto px-4 py-16"><div class="grid md:grid-cols-3 gap-8"><div><p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep">The Studio</p><h2 class="font-serif text-3xl mt-3">What matters here.</h2></div><div class="md:col-span-2 grid sm:grid-cols-2 gap-4"><div class="rounded-2xl border border-palette-border p-5"><p class="font-bold text-sm">Strong foundations</p><p class="text-sm text-palette-muted mt-2">Technique and reading skills that support long-term independence.</p></div><div class="rounded-2xl border border-palette-border p-5"><p class="font-bold text-sm">Encouraging progress</p><p class="text-sm text-palette-muted mt-2">Clear goals without turning lessons into a high-pressure environment.</p></div><div class="rounded-2xl border border-palette-border p-5"><p class="font-bold text-sm">Individual attention</p><p class="text-sm text-palette-muted mt-2">One-on-one lessons shaped around each student's pace and needs.</p></div><div class="rounded-2xl border border-palette-border p-5"><p class="font-bold text-sm">Enjoyable music</p><p class="text-sm text-palette-muted mt-2">Room for students to discover music that keeps them excited to play.</p></div></div></div></div></section>
-<section class="max-w-5xl mx-auto px-4 py-20"><div class="bg-palette-blueDeep rounded-3xl px-6 sm:px-12 py-12 text-center shadow-xl"><p class="text-palette-butter text-xs uppercase tracking-[.2em] font-bold">Your turn at the keys</p><h2 class="font-serif text-3xl sm:text-4xl text-white mt-3">Ready to begin?</h2><p class="text-white/70 text-sm max-w-xl mx-auto mt-4 mb-7">Browse available weekly times and find a lesson slot that works for your family.</p><a href="booking.html" class="inline-block bg-palette-butter hover:bg-palette-butterHover text-palette-navy font-bold px-7 py-3.5 rounded-xl text-xs uppercase tracking-wider transition">View Lesson Times →</a></div></section>
+
+<!-- NEW PHOTO CAROUSEL -->
+<section class="bg-white border-y border-palette-border">
+  <div class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
+    <div class="text-center max-w-2xl mx-auto mb-9">
+      <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep mb-3">Photo Journal</p>
+      <h2 class="font-serif text-3xl sm:text-4xl">Moments from the music.</h2>
+      <p class="text-sm text-palette-muted leading-relaxed mt-4">Flip through performances, recitals, practice sessions, and favorite moments from Hailey's musical journey.</p>
+    </div>
+
+    <div class="relative max-w-4xl mx-auto">
+      <div class="overflow-hidden rounded-3xl shadow-[0_14px_35px_rgba(27,30,56,.12)] bg-palette-sand">
+        <div class="aspect-[4/3] sm:aspect-[16/9] relative">
+          <!--
+            PHOTO CAROUSEL IMAGES:
+            Edit the JavaScript photoSlides array near the bottom of this file.
+            You can use local images like images/recital.jpg.
+          -->
+          <img id="photoCarouselImage" src="https://images.unsplash.com/photo-1520523839898-50712825e617?auto=format&fit=crop&w=1400&q=80" class="w-full h-full object-cover transition-opacity duration-300" alt="Hailey's musical journey">
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-palette-navy/85 to-transparent p-5 sm:p-7 text-white">
+            <p id="photoCarouselCaption" class="font-serif text-xl sm:text-2xl">At the piano</p>
+          </div>
+        </div>
+      </div>
+
+      <button id="photoPrev" type="button" aria-label="Previous photo" class="absolute left-3 sm:-left-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/95 shadow-lg border border-palette-border flex items-center justify-center text-palette-navy text-xl hover:scale-110 transition">‹</button>
+      <button id="photoNext" type="button" aria-label="Next photo" class="absolute right-3 sm:-right-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/95 shadow-lg border border-palette-border flex items-center justify-center text-palette-navy text-xl hover:scale-110 transition">›</button>
+    </div>
+
+    <div id="photoDots" class="flex justify-center gap-2 mt-5"></div>
+  </div>
+</section>
+
+<section class="bg-white border-b border-palette-border">
+  <div class="max-w-5xl mx-auto px-4 py-16">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div><p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep">The Studio</p><h2 class="font-serif text-3xl mt-3">What matters here.</h2></div>
+      <div class="md:col-span-2 grid sm:grid-cols-2 gap-4">
+        <div class="rounded-2xl border border-palette-border p-5"><p class="font-bold text-sm">Strong foundations</p><p class="text-sm text-palette-muted mt-2">Technique and reading skills that support long-term independence.</p></div>
+        <div class="rounded-2xl border border-palette-border p-5"><p class="font-bold text-sm">Encouraging progress</p><p class="text-sm text-palette-muted mt-2">Clear goals without turning lessons into a high-pressure environment.</p></div>
+        <div class="rounded-2xl border border-palette-border p-5"><p class="font-bold text-sm">Individual attention</p><p class="text-sm text-palette-muted mt-2">One-on-one lessons shaped around each student's pace and needs.</p></div>
+        <div class="rounded-2xl border border-palette-border p-5"><p class="font-bold text-sm">Enjoyable music</p><p class="text-sm text-palette-muted mt-2">Room for students to discover music that keeps them excited to play.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-5xl mx-auto px-4 py-20">
+  <div class="bg-palette-blueDeep rounded-3xl px-6 sm:px-12 py-12 text-center shadow-xl">
+    <p class="text-palette-butter text-xs uppercase tracking-[.2em] font-bold">Your turn at the keys</p>
+    <h2 class="font-serif text-3xl sm:text-4xl text-white mt-3">Ready to begin?</h2>
+    <p class="text-white/70 text-sm max-w-xl mx-auto mt-4 mb-7">Browse available weekly times and find a lesson slot that works for your family.</p>
+    <a href="booking.html" class="inline-block bg-palette-butter hover:bg-palette-butterHover text-palette-navy font-bold px-7 py-3.5 rounded-xl text-xs uppercase tracking-wider transition">View Lesson Times →</a>
+  </div>
+</section>
 </main>
+
 <footer class="bg-palette-blueDeep text-white mt-auto border-t border-white/10">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-14">
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-9 lg:gap-10">
@@ -278,121 +232,102 @@
     <div class="border-t border-white/15 mt-10 pt-6 flex flex-col sm:flex-row gap-3 justify-between text-[11px] text-white/50"><p>© 2026 Hailey's Piano Studio. All rights reserved.</p><p>Private piano instruction • One student at a time.</p></div>
   </div>
 </footer>
+
 <script>
-/* ================================================================
-   PORTFOLIO PHOTO + YOUTUBE CAROUSEL
-   ================================================================
-
-   VIDEO SETUP:
-   In each video thumbnail above, replace:
-
-       YOUR_YOUTUBE_VIDEO_ID_1
-       YOUR_YOUTUBE_VIDEO_ID_2
-
-   with the ID of the YouTube video.
-
-   Example YouTube URL:
-       https://www.youtube.com/watch?v=abc123XYZ
-
-   The ID is:
-       abc123XYZ
-
-   You do NOT need to paste YouTube's full <iframe> embed code.
-   This script creates the embed URL for you.
-   ================================================================ */
-
-const galleryThumbs = document.querySelectorAll('.gallery-thumb');
-const portfolioImage = document.getElementById('portfolioImage');
+/* VIDEO SELECTOR */
 const portfolioVideo = document.getElementById('portfolioVideo');
-const portfolioCaption = document.getElementById('portfolioCaption');
-const portfolioSubcaption = document.getElementById('portfolioSubcaption');
-const portfolioCaptionBox = document.getElementById('portfolioCaptionBox');
+const videoThumbs = document.querySelectorAll('.video-thumb');
 
-function stopYouTubeVideo() {
-  // Clearing src completely stops playback and prevents audio
-  // from continuing after the visitor switches to another slide.
-  portfolioVideo.src = 'about:blank';
-}
-
-galleryThumbs.forEach(button => {
+videoThumbs.forEach(button => {
   button.addEventListener('click', () => {
+    const videoId = button.dataset.youtubeId;
+    if (!videoId) return;
 
-    const type = button.dataset.type;
-
-    // Update selected thumbnail border.
-    galleryThumbs.forEach(item => {
+    videoThumbs.forEach(item => {
       item.classList.remove('border-palette-blueDeep');
       item.classList.add('border-transparent');
     });
-
     button.classList.remove('border-transparent');
     button.classList.add('border-palette-blueDeep');
 
-
-    // Update text.
-    portfolioCaption.textContent = button.dataset.caption || '';
-    portfolioSubcaption.textContent = button.dataset.subcaption || '';
-
-
-    if (type === 'youtube') {
-
-      const videoId = button.dataset.youtubeId;
-
-      // Do not attempt to load the placeholder before you add a real ID.
-      if (!videoId || videoId.startsWith('YOUR_YOUTUBE_VIDEO_ID')) {
-        portfolioCaption.textContent = 'Add your YouTube video';
-        portfolioSubcaption.textContent =
-          'Replace the placeholder YouTube video ID in portfolio.html.';
-        return;
-      }
-
-      // Hide the photo.
-      portfolioImage.classList.add('hidden');
-
-      // The caption overlay is hidden while video controls are active
-      // so it does not cover the YouTube player.
-      portfolioCaptionBox.classList.add('hidden');
-
-      // Show the video player.
-      portfolioVideo.classList.remove('hidden');
-
-      /*
-        autoplay=1     -> starts playback when thumbnail is selected
-        rel=0          -> limits related videos as much as YouTube allows
-        playsinline=1  -> keeps playback inline on supported mobile devices
-
-        Because selecting the thumbnail is a user interaction, browsers are
-        generally more permissive about autoplay here. Some browsers/devices
-        may still apply their own autoplay rules.
-      */
-      portfolioVideo.src =
-        'https://www.youtube-nocookie.com/embed/' +
-        encodeURIComponent(videoId) +
-        '?autoplay=1&playsinline=1&rel=0';
-
-    } else {
-
-      // Switching to a photo should completely stop any playing video.
-      stopYouTubeVideo();
-
-      portfolioVideo.classList.add('hidden');
-      portfolioImage.classList.remove('hidden');
-      portfolioCaptionBox.classList.remove('hidden');
-
-      portfolioImage.style.opacity = '0';
-
-      setTimeout(() => {
-        portfolioImage.src = button.dataset.src;
-        portfolioImage.style.opacity = '1';
-      }, 180);
-    }
-
+    // Thumbnail click is a user action, so the selected video requests autoplay.
+    portfolioVideo.src =
+      'https://www.youtube-nocookie.com/embed/' +
+      encodeURIComponent(videoId) +
+      '?autoplay=1&playsinline=1&rel=0';
   });
 });
-</script>
 
-<script>
-(function(){const b=document.getElementById('menuButton'),m=document.getElementById('mobileMenu');if(!b||!m)return;const close=()=>{m.classList.remove('open');m.classList.add('pointer-events-none');b.setAttribute('aria-expanded','false')};b.addEventListener('click',e=>{e.stopPropagation();const o=!m.classList.contains('open');if(o){m.classList.add('open');m.classList.remove('pointer-events-none');b.setAttribute('aria-expanded','true')}else close()});document.addEventListener('click',e=>{if(m.classList.contains('open')&&!m.contains(e.target))close()});})();
+
+/* ================================================================
+   PHOTO CAROUSEL
+   Add, remove, or replace images here.
+   Local images work too:
+   { src: "images/hailey-recital.jpg", caption: "Spring recital" }
+   ================================================================ */
+const photoSlides = [
+  {
+    src: "https://images.unsplash.com/photo-1520523839898-50712825e617?auto=format&fit=crop&w=1400&q=80",
+    caption: "At the piano"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1513883049090-d0b7439799bf?auto=format&fit=crop&w=1400&q=80",
+    caption: "Practice & preparation"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1552422535-c45813c61732?auto=format&fit=crop&w=1400&q=80",
+    caption: "A love of music"
+  }
+];
+
+let currentPhoto = 0;
+const carouselImage = document.getElementById('photoCarouselImage');
+const carouselCaption = document.getElementById('photoCarouselCaption');
+const photoDots = document.getElementById('photoDots');
+
+function buildDots() {
+  photoDots.innerHTML = '';
+  photoSlides.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('aria-label', 'View photo ' + (index + 1));
+    dot.className = 'w-2.5 h-2.5 rounded-full transition-all ' +
+      (index === currentPhoto ? 'bg-palette-blueDeep w-7' : 'bg-palette-blueBorder');
+    dot.addEventListener('click', () => showPhoto(index));
+    photoDots.appendChild(dot);
+  });
+}
+
+function showPhoto(index) {
+  currentPhoto = (index + photoSlides.length) % photoSlides.length;
+  carouselImage.style.opacity = '0';
+
+  setTimeout(() => {
+    carouselImage.src = photoSlides[currentPhoto].src;
+    carouselCaption.textContent = photoSlides[currentPhoto].caption;
+    carouselImage.style.opacity = '1';
+    buildDots();
+  }, 180);
+}
+
+document.getElementById('photoPrev').addEventListener('click', () => showPhoto(currentPhoto - 1));
+document.getElementById('photoNext').addEventListener('click', () => showPhoto(currentPhoto + 1));
+buildDots();
+
+
+/* MOBILE NAVIGATION */
+(function(){
+  const b=document.getElementById('menuButton'),m=document.getElementById('mobileMenu');
+  if(!b||!m)return;
+  const close=()=>{m.classList.remove('open');m.classList.add('pointer-events-none');b.setAttribute('aria-expanded','false')};
+  b.addEventListener('click',e=>{
+    e.stopPropagation();
+    const o=!m.classList.contains('open');
+    if(o){m.classList.add('open');m.classList.remove('pointer-events-none');b.setAttribute('aria-expanded','true')}
+    else close()
+  });
+  document.addEventListener('click',e=>{if(m.classList.contains('open')&&!m.contains(e.target))close()});
+})();
 </script>
 </body>
 </html>
