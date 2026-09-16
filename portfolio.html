@@ -19,6 +19,19 @@
 @keyframes menuItemIn{to{opacity:1;transform:translateX(0)}}
 #mobileMenuPanel{transform:translateX(115%);opacity:0;transition:transform .3s ease,opacity .22s ease}
 #mobileMenu.open #mobileMenuPanel{transform:translateX(0);opacity:1;pointer-events:auto}
+
+.portfolio-hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* Desktop: move the crop upward so Hailey's upper body is visible */
+  background-position: center 60%;
+}
+.portfolio-hero-overlay{background:linear-gradient(90deg,rgba(15,18,42,.72) 0%,rgba(15,18,42,.52) 50%,rgba(15,18,42,.30) 100%)}
+@media(max-width:767px){
+  .portfolio-hero{background-position:58% 82%}
+  .portfolio-hero-overlay{background:rgba(15,18,42,.48)}
+}
 </style>
 </head>
 <body class="bg-palette-cream text-palette-navy font-sans antialiased min-h-screen flex flex-col">
@@ -52,12 +65,13 @@
 </header>
 
 <main class="flex-grow">
-<section class="max-w-5xl mx-auto px-4 py-14 sm:py-20">
-  <div class="grid lg:grid-cols-12 gap-10 items-end">
-    <div class="lg:col-span-7">
-      <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep mb-3">Studio Portfolio</p>
-      <h1 class="font-serif text-4xl sm:text-5xl leading-tight">A growing life of <span class="font-display text-palette-blueDeep">music & teaching.</span></h1>
-      <p class="text-palette-muted mt-5 leading-relaxed max-w-2xl">A look at Hailey's experience, musical milestones, teaching values, and the kind of thoughtful studio environment she hopes to create for every student.</p>
+<section class="portfolio-hero relative overflow-hidden" style="background-image:url('images/recital.jpeg')">
+  <div class="absolute inset-0 portfolio-hero-overlay"></div>
+  <div class="relative z-10 max-w-5xl mx-auto px-4 py-24 sm:py-32">
+    <div class="max-w-3xl">
+      <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-butter mb-3">Studio Portfolio</p>
+      <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight text-white">A growing life of <span class="font-display text-palette-blue">music & teaching.</span></h1>
+      <p class="text-white/90 mt-5 leading-relaxed max-w-2xl">A look at Hailey's experience, musical milestones, teaching values, and the kind of thoughtful studio environment she hopes to create for every student.</p>
     </div>
   </div>
 </section>
@@ -84,7 +98,8 @@
 </section>
 
 <!-- PERFORMANCE VIDEO SECTION -->
-<section class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
+<section class="bg-palette-cream">
+  <div class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
   <div class="grid lg:grid-cols-12 gap-8 lg:items-center">
 
     <!-- On mobile this text appears FIRST. On desktop it stays on the right. -->
@@ -154,6 +169,7 @@
       </div>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- NEW PHOTO CAROUSEL -->
@@ -166,48 +182,73 @@
     </div>
 
     <div class="relative max-w-4xl mx-auto">
-      <div class="overflow-hidden rounded-3xl shadow-[0_14px_35px_rgba(27,30,56,.12)] bg-palette-sand">
-        <div class="aspect-[4/3] sm:aspect-[16/9] relative">
-          <!--
-            PHOTO CAROUSEL IMAGES:
-            Edit the JavaScript photoSlides array near the bottom of this file.
-            You can use local images like images/recital.jpg.
-          -->
-          <img id="photoCarouselImage" src="https://images.unsplash.com/photo-1520523839898-50712825e617?auto=format&fit=crop&w=1400&q=80" class="w-full h-full object-cover transition-opacity duration-300" alt="Hailey's musical journey">
-          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-palette-navy/85 to-transparent p-5 sm:p-7 text-white">
-            <p id="photoCarouselCaption" class="font-serif text-xl sm:text-2xl">At the piano</p>
-          </div>
-        </div>
-      </div>
+      <div class="overflow-hidden rounded-3xl shadow-[0_14px_35px_rgba(27,30,56,.12)]">
+  <div class="relative h-[350px] sm:h-[450px]">
 
-      <button id="photoPrev" type="button" aria-label="Previous photo" class="absolute left-3 sm:-left-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/95 shadow-lg border border-palette-border flex items-center justify-center text-palette-navy text-xl hover:scale-110 transition">‹</button>
-      <button id="photoNext" type="button" aria-label="Next photo" class="absolute right-3 sm:-right-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/95 shadow-lg border border-palette-border flex items-center justify-center text-palette-navy text-xl hover:scale-110 transition">›</button>
+    <!-- Blurred background fills any extra space -->
+    <img
+      id="photoCarouselBackground"
+      src="images/trophy.jpeg"
+      class="absolute inset-0 w-full h-full object-cover scale-110 blur-xl brightness-75 pointer-events-none"
+      alt=""
+      aria-hidden="true"
+    >
+
+    <!-- Actual image: always shows the whole photo -->
+    <img
+      id="photoCarouselImage"
+      src="images/trophy.jpeg"
+      class="relative z-10 w-full h-full object-contain transition-opacity duration-300 pointer-events-none"
+      alt="Hailey's musical journey"
+    >
+
+    <!-- Caption -->
+    <div class="absolute z-20 inset-x-0 bottom-0 bg-gradient-to-t from-palette-navy/85 to-transparent p-5 sm:p-7 text-white">
+      <p
+        id="photoCarouselCaption"
+        class="font-serif text-xl sm:text-2xl"
+      >
+        2019 Piano Competition Winner
+      </p>
+    </div>
+
+  </div>
+</div>
+
+     <button
+  id="photoPrev"
+  type="button"
+  aria-label="Previous photo"
+  class="absolute z-30 left-3 sm:-left-5 top-1/2 -translate-y-1/2 w-14 h-14 sm:w-11 sm:h-11 rounded-full bg-white/95 shadow-lg border border-palette-border flex items-center justify-center text-palette-navy text-xl hover:scale-110 transition touch-manipulation"
+>
+  ‹
+</button>
+
+<button
+  id="photoNext"
+  type="button"
+  aria-label="Next photo"
+  class="absolute z-30 right-3 sm:-right-5 top-1/2 -translate-y-1/2 w-14 h-14 sm:w-11 sm:h-11 rounded-full bg-white/95 shadow-lg border border-palette-border flex items-center justify-center text-palette-navy text-xl hover:scale-110 transition touch-manipulation"
+>
+  ›
+</button>
     </div>
 
     <div id="photoDots" class="flex justify-center gap-2 mt-5"></div>
   </div>
 </section>
 
-<section class="bg-white border-b border-palette-border">
+<section class="bg-palette-cream border-b border-palette-border">
   <div class="max-w-5xl mx-auto px-4 py-16">
     <div class="grid md:grid-cols-3 gap-8">
       <div><p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep">The Studio</p><h2 class="font-serif text-3xl mt-3">What matters here.</h2></div>
       <div class="md:col-span-2 grid sm:grid-cols-2 gap-4">
-        <div class="rounded-2xl border border-palette-border p-5"><p class="font-bold text-sm">Strong foundations</p><p class="text-sm text-palette-muted mt-2">Technique and reading skills that support long-term independence.</p></div>
-        <div class="rounded-2xl border border-palette-border p-5"><p class="font-bold text-sm">Encouraging progress</p><p class="text-sm text-palette-muted mt-2">Clear goals without turning lessons into a high-pressure environment.</p></div>
-        <div class="rounded-2xl border border-palette-border p-5"><p class="font-bold text-sm">Individual attention</p><p class="text-sm text-palette-muted mt-2">One-on-one lessons shaped around each student's pace and needs.</p></div>
-        <div class="rounded-2xl border border-palette-border p-5"><p class="font-bold text-sm">Enjoyable music</p><p class="text-sm text-palette-muted mt-2">Room for students to discover music that keeps them excited to play.</p></div>
+        <div class="bg-white rounded-2xl border border-palette-border p-5 shadow-[0_4px_16px_rgba(27,30,56,.04)]"><p class="font-bold text-sm">Strong foundations</p><p class="text-sm text-palette-muted mt-2">Technique and reading skills that support long-term independence.</p></div>
+        <div class="bg-white rounded-2xl border border-palette-border p-5 shadow-[0_4px_16px_rgba(27,30,56,.04)]"><p class="font-bold text-sm">Encouraging progress</p><p class="text-sm text-palette-muted mt-2">Clear goals without turning lessons into a high-pressure environment.</p></div>
+        <div class="bg-white rounded-2xl border border-palette-border p-5 shadow-[0_4px_16px_rgba(27,30,56,.04)]"><p class="font-bold text-sm">Individual attention</p><p class="text-sm text-palette-muted mt-2">One-on-one lessons shaped around each student's pace and needs.</p></div>
+        <div class="bg-white rounded-2xl border border-palette-border p-5 shadow-[0_4px_16px_rgba(27,30,56,.04)]"><p class="font-bold text-sm">Enjoyable music</p><p class="text-sm text-palette-muted mt-2">Room for students to discover music that keeps them excited to play.</p></div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="max-w-5xl mx-auto px-4 py-20">
-  <div class="bg-palette-blueDeep rounded-3xl px-6 sm:px-12 py-12 text-center shadow-xl">
-    <p class="text-palette-butter text-xs uppercase tracking-[.2em] font-bold">Your turn at the keys</p>
-    <h2 class="font-serif text-3xl sm:text-4xl text-white mt-3">Ready to begin?</h2>
-    <p class="text-white/70 text-sm max-w-xl mx-auto mt-4 mb-7">Browse available weekly times and find a lesson slot that works for your family.</p>
-    <a href="booking.html" class="inline-block bg-palette-butter hover:bg-palette-butterHover text-palette-navy font-bold px-7 py-3.5 rounded-xl text-xs uppercase tracking-wider transition">View Lesson Times →</a>
   </div>
 </section>
 </main>
@@ -267,22 +308,23 @@ videoThumbs.forEach(button => {
    ================================================================ */
 const photoSlides = [
   {
-    src: "https://images.unsplash.com/photo-1520523839898-50712825e617?auto=format&fit=crop&w=1400&q=80",
-    caption: "At the piano"
+    src: "images/trophy.jpeg",
+    caption: "2019 Piano Competition Winner"
   },
   {
-    src: "https://images.unsplash.com/photo-1513883049090-d0b7439799bf?auto=format&fit=crop&w=1400&q=80",
-    caption: "Practice & preparation"
+    src: "images/recital.jpeg",
+    caption: "Recital Performance"
   },
   {
-    src: "https://images.unsplash.com/photo-1552422535-c45813c61732?auto=format&fit=crop&w=1400&q=80",
-    caption: "A love of music"
+    src: "images/senior.jpeg",
+    caption: "Senior Year"
   }
 ];
 
 let currentPhoto = 0;
 const carouselImage = document.getElementById('photoCarouselImage');
 const carouselCaption = document.getElementById('photoCarouselCaption');
+const carouselBackground = document.getElementById('photoCarouselBackground');
 const photoDots = document.getElementById('photoDots');
 
 function buildDots() {
@@ -300,12 +342,18 @@ function buildDots() {
 
 function showPhoto(index) {
   currentPhoto = (index + photoSlides.length) % photoSlides.length;
+
   carouselImage.style.opacity = '0';
 
   setTimeout(() => {
-    carouselImage.src = photoSlides[currentPhoto].src;
+    const newImage = photoSlides[currentPhoto].src;
+
+    carouselImage.src = newImage;
+    carouselBackground.src = newImage;
     carouselCaption.textContent = photoSlides[currentPhoto].caption;
+
     carouselImage.style.opacity = '1';
+
     buildDots();
   }, 180);
 }
