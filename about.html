@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Hailey | Hailey's Piano Studio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Lilita+One&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>tailwind.config={theme:{extend:{colors:{palette:{blue:"#98CBE8",blueHover:"#84BDDD",blueDeep:"#1E5880",blueSoft:"#EEF6FB",blueBorder:"#C5E2F3",navy:"#1B1E38",butter:"#F9DF7B",butterHover:"#F2D463",butterBorder:"#F2DC87",butterSoft:"#FFFCEB",cream:"#FAF7F2",sand:"#F0EAE1",border:"#E8E1D7",muted:"#6B6864"}},fontFamily:{display:['"Lilita One"',"cursive","sans-serif"],serif:['"Fraunces"',"Georgia","serif"],sans:['"Plus Jakarta Sans"',"sans-serif"]}}}}</script>
+
+
+
+<style>
+.mobile-menu-link{opacity:0;transform:translateX(20px)}
+#mobileMenu.open .mobile-menu-link{animation:menuItemIn .32s ease forwards}
+#mobileMenu.open .mobile-menu-link:nth-child(1){animation-delay:.05s}#mobileMenu.open .mobile-menu-link:nth-child(2){animation-delay:.12s}#mobileMenu.open .mobile-menu-link:nth-child(3){animation-delay:.19s}#mobileMenu.open .mobile-menu-link:nth-child(4){animation-delay:.26s}
+@keyframes menuItemIn{to{opacity:1;transform:translateX(0)}}
+#mobileMenuPanel{transform:translateX(115%);opacity:0;transition:transform .3s ease,opacity .22s ease}
+#mobileMenu.open #mobileMenuPanel{transform:translateX(0);opacity:1;pointer-events:auto}
+</style>
+</head>
+<body class="bg-palette-cream text-palette-navy font-sans antialiased min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 bg-palette-blueDeep border-b border-white/10 shadow-[0_5px_20px_rgba(27,30,56,.12)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+    <a href="index.html" class="group text-white">
+      <span class="font-display text-2xl sm:text-3xl tracking-wide block leading-none">Hailey's Piano Studio</span>
+      <span class="text-[10px] tracking-widest uppercase font-semibold text-white/65 block mt-1">Private Piano Instruction</span>
+    </a>
+    <nav class="hidden md:flex items-center space-x-6 text-xs uppercase tracking-wider font-bold">
+      <a href="index.html" class="text-white/75 hover:text-white transition">Home</a><a href="about.html" class="text-white transition">About Hailey</a><a href="portfolio.html" class="text-white/75 hover:text-white transition">Portfolio</a>
+      <a href="booking.html" class="bg-palette-butter hover:bg-palette-butterHover text-palette-navy px-4 py-2.5 rounded-xl border border-palette-butterBorder shadow-sm transition">Book Lessons</a>
+    </nav>
+    <button id="menuButton" class="md:hidden w-11 h-11 rounded-xl border border-white/20 flex flex-col items-center justify-center gap-1.5 hover:bg-white/10 transition" aria-label="Open menu" aria-expanded="false">
+      <span class="w-5 h-0.5 bg-white rounded"></span><span class="w-5 h-0.5 bg-white rounded"></span><span class="w-5 h-0.5 bg-white rounded"></span>
+    </button>
+  </div>
+  <div id="mobileMenu" class="md:hidden absolute right-3 top-[72px] pointer-events-none">
+    <div id="mobileMenuPanel" class="w-64 bg-palette-blueDeep border border-white/15 rounded-2xl shadow-2xl p-2.5 overflow-hidden">
+      <nav class="space-y-1"><a href="index.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold text-white/80 hover:bg-white/10 hover:text-white">Home</a><a href="about.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold bg-white/10 text-white">About Hailey</a><a href="portfolio.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold text-white/80 hover:bg-white/10 hover:text-white">Portfolio</a><a href="booking.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold bg-palette-butter text-palette-navy hover:bg-palette-butterHover">Book Lessons →</a></nav>
+    </div>
+  </div>
+</header>
+<main class="flex-grow">
+
+  <!-- INTRO / ABOUT HERO -->
+  <section class="max-w-5xl mx-auto px-4 py-14 sm:py-20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <div class="md:col-span-7 text-left order-1 md:order-2">
+        <p class="text-xs uppercase tracking-[0.2em] font-bold text-palette-blueDeep mb-3">Meet Your Teacher</p>
+        <h1 class="font-serif text-4xl sm:text-5xl text-palette-navy leading-tight">Hi, I'm <span class="font-display text-palette-blueDeep">Hailey!</span></h1>
+        <p class="text-palette-muted text-sm sm:text-base leading-relaxed mt-5">I believe learning the piano should be an inspiring, positive experience—never an intimidating one. My studio is designed to be a comfortable space where students feel encouraged to explore, make mistakes, and discover the music that excites them.</p>
+        <p class="text-palette-muted text-sm sm:text-base leading-relaxed mt-4">Whether you're looking for lessons for your child or wanting to begin or pick up the piano as an adult, we'll design each lesson around what keeps you motivated, confident, and having fun at the keys.</p>
+        <div class="grid grid-cols-3 gap-3 mt-7">
+          <div class="bg-white border border-palette-border rounded-xl p-3 text-center shadow-sm hover:-translate-y-1 hover:shadow-md transition-all"><p class="font-serif text-xl text-palette-blueDeep">15+</p><p class="text-[9px] uppercase tracking-wider font-bold text-palette-muted mt-1">Years Playing</p></div>
+          <div class="bg-white border border-palette-border rounded-xl p-3 text-center shadow-sm hover:-translate-y-1 hover:shadow-md transition-all"><p class="font-serif text-xl text-palette-blueDeep">[Age]</p><p class="text-[9px] uppercase tracking-wider font-bold text-palette-muted mt-1">Started Piano</p></div>
+        </div>
+        <div class="pt-6 flex flex-wrap gap-3"><a href="booking.html" class="bg-palette-butter hover:bg-palette-butterHover text-palette-navy font-bold px-5 py-3 rounded-xl text-xs uppercase tracking-wider border border-palette-butterBorder shadow-sm transition">Book Lessons →</a><a href="portfolio.html" class="bg-white hover:bg-palette-blueSoft text-palette-navy font-bold px-5 py-3 rounded-xl text-xs uppercase tracking-wider border border-palette-blueBorder shadow-sm transition">View Portfolio</a></div>
+      </div>
+      <div class="md:col-span-5 order-2 md:order-1 flex justify-center">
+        <figure class="w-full max-w-sm">
+          <div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_18px_45px_rgba(27,30,56,.14)]">
+            <img src="images/portrait.jpg" alt="Hailey" class="w-full h-full object-cover">
+          </div>
+          <figcaption class="pt-4 text-center md:text-left">
+            <p class="font-display text-xl text-palette-navy">Hailey</p>
+            <p class="text-[10px] uppercase tracking-[.16em] text-palette-muted mt-1">Pianist • Teacher • Studio Director</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- MY STORY -->
+  <section class="bg-white border-y border-palette-border">
+
+    <div class="max-w-4xl mx-auto px-4 py-16 sm:py-20">
+
+      <div class="grid md:grid-cols-12 gap-10 items-start">
+
+        <!-- TITLE -->
+        <div class="md:col-span-4">
+
+          <p class="text-xs uppercase tracking-[0.2em] font-bold text-palette-blueDeep mb-3">
+            My Story
+          </p>
+
+          <h2 class="font-serif text-3xl sm:text-4xl text-palette-navy">
+            How piano became part of my life.
+          </h2>
+
+          <div class="w-14 h-1 bg-palette-butter rounded-full mt-5"></div>
+
+        </div>
+
+
+        <!-- STORY -->
+        <div class="md:col-span-8 space-y-5 text-palette-muted text-sm leading-relaxed">
+
+          <p>
+            My relationship with the piano began when I was
+            <strong class="text-palette-navy">[age]</strong>.
+            [Add a few sentences about how Hailey first became interested in
+            piano. Was it her idea? Did a parent put her in lessons? Was there
+            a piano in the house?]
+          </p>
+
+          <p>
+            As I continued playing, music became more than simply learning
+            songs. [Talk about recitals, teachers who influenced her,
+            competitions, accompanying, church, school, college, or whatever
+            actually applies to Hailey.]
+          </p>
+
+          <p>
+            Eventually, I discovered how much I enjoyed helping other people
+            learn. [Explain how she first got into teaching or why she's
+            excited to begin teaching.] That's what ultimately led me to create
+            Hailey's Piano Studio.
+          </p>
+
+
+          <!-- QUOTE -->
+          <blockquote class="border-l-4 border-palette-butter pl-5 py-2 mt-7">
+
+            <p class="font-serif text-xl sm:text-2xl text-palette-navy italic leading-relaxed">
+              “My goal isn't just to teach students how to play songs.
+              I want them to become musicians who genuinely enjoy sitting
+              down at the piano.”
+            </p>
+
+            <p class="text-xs font-bold uppercase tracking-wider text-palette-blueDeep mt-3">
+              — Hailey
+            </p>
+
+          </blockquote>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TEACHING PHILOSOPHY -->
+  <section class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
+
+    <div class="text-center max-w-2xl mx-auto mb-11">
+
+      <p class="text-xs uppercase tracking-[0.2em] font-bold text-palette-blueDeep mb-3">
+        My Approach
+      </p>
+
+      <h2 class="font-serif text-3xl sm:text-4xl text-palette-navy">
+        What you can expect from me.
+      </h2>
+
+      <p class="text-sm text-palette-muted leading-relaxed mt-4">
+        Every student learns differently. My job is to meet students where
+        they are while helping them build the skills and confidence to keep
+        progressing.
+      </p>
+
+    </div>
+
+
+    <div class="grid md:grid-cols-3 gap-5">
+
+      <!-- CARD 1 -->
+      <div class="
+        group bg-white border border-palette-border rounded-2xl p-7
+        shadow-[0_4px_18px_rgba(27,30,56,0.06)]
+        hover:shadow-[0_14px_32px_rgba(27,30,56,0.11)]
+        hover:-translate-y-2
+        transition-all duration-300
+      ">
+
+        <div class="
+          w-11 h-11 rounded-xl bg-palette-blueSoft
+          flex items-center justify-center text-xl mb-5
+          group-hover:scale-110 group-hover:-rotate-3
+          transition-transform duration-300
+        ">
+          ♫
+        </div>
+
+        <h3 class="font-serif text-xl mb-3">
+          Learn at Your Pace
+        </h3>
+
+        <p class="text-sm text-palette-muted leading-relaxed">
+          Students shouldn't feel like they're racing through a curriculum.
+          We'll slow down when something needs work and move forward when
+          they're ready.
+        </p>
+
+      </div>
+
+
+      <!-- CARD 2 -->
+      <div class="
+        group bg-white border border-palette-border rounded-2xl p-7
+        shadow-[0_4px_18px_rgba(27,30,56,0.06)]
+        hover:shadow-[0_14px_32px_rgba(27,30,56,0.11)]
+        hover:-translate-y-2
+        transition-all duration-300
+      ">
+
+        <div class="
+          w-11 h-11 rounded-xl bg-palette-butterSoft
+          flex items-center justify-center text-xl mb-5
+          group-hover:scale-110 group-hover:rotate-3
+          transition-transform duration-300
+        ">
+          ★
+        </div>
+
+        <h3 class="font-serif text-xl mb-3">
+          Confidence First
+        </h3>
+
+        <p class="text-sm text-palette-muted leading-relaxed">
+          Mistakes are part of becoming a musician. Lessons should be a
+          comfortable place to try, struggle, improve, and celebrate progress.
+        </p>
+
+      </div>
+
+
+      <!-- CARD 3 -->
+      <div class="
+        group bg-white border border-palette-border rounded-2xl p-7
+        shadow-[0_4px_18px_rgba(27,30,56,0.06)]
+        hover:shadow-[0_14px_32px_rgba(27,30,56,0.11)]
+        hover:-translate-y-2
+        transition-all duration-300
+      ">
+
+        <div class="
+          w-11 h-11 rounded-xl bg-palette-blueSoft
+          flex items-center justify-center text-xl mb-5
+          group-hover:scale-110 group-hover:-rotate-3
+          transition-transform duration-300
+        ">
+          ♪
+        </div>
+
+        <h3 class="font-serif text-xl mb-3">
+          Music Should Be Fun
+        </h3>
+
+        <p class="text-sm text-palette-muted leading-relaxed">
+          Technique and theory matter, but so does enjoying what you play.
+          We'll work toward strong fundamentals without losing the joy that
+          makes music worth learning.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="max-w-5xl mx-auto px-4 pb-20">
+
+    <div class="
+      bg-palette-navy rounded-3xl
+      px-6 sm:px-12 py-12
+      text-center
+      shadow-[0_12px_35px_rgba(27,30,56,0.15)]
+    ">
+
+      <p class="text-palette-butter text-xs uppercase tracking-[0.2em] font-bold mb-3">
+        Let's Make Music
+      </p>
+
+      <h2 class="font-serif text-3xl sm:text-4xl text-white mb-4">
+        I'd love to meet your student.
+      </h2>
+
+      <p class="text-white/65 text-sm max-w-xl mx-auto leading-relaxed mb-7">
+        Take a look at the available weekly lesson times and find one that
+        works for your family.
+      </p>
+
+      <a
+        href="booking.html"
+        class="
+          inline-block bg-palette-butter hover:bg-palette-butterHover
+          text-palette-navy font-bold px-7 py-3.5 rounded-xl
+          text-xs uppercase tracking-wider
+          hover:-translate-y-1 hover:shadow-lg
+          transition-all duration-200
+        "
+      >
+        View Lesson Times →
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+<footer class="bg-palette-blueDeep text-white mt-auto border-t border-white/10">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-14">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-9 lg:gap-10">
+      <div class="sm:col-span-2 lg:col-span-2">
+        <p class="font-display text-2xl tracking-wide">Hailey's Piano Studio</p>
+        <p class="text-white/65 text-sm leading-relaxed mt-3 max-w-md">Warm, encouraging private piano instruction built around strong fundamentals, musical confidence, and a lifelong enjoyment of playing.</p>
+        <a href="booking.html" class="inline-block mt-5 bg-palette-butter hover:bg-palette-butterHover text-palette-navy font-bold px-5 py-3 rounded-xl text-xs uppercase tracking-wider transition hover:-translate-y-0.5">Find a Lesson Time →</a>
+      </div>
+      <div>
+        <p class="text-[10px] uppercase tracking-[.2em] font-bold text-white/50 mb-4">Explore</p>
+        <div class="space-y-3 text-sm"><a class="block text-white/75 hover:text-white transition" href="index.html">Home</a><a class="block text-white/75 hover:text-white transition" href="about.html">About Hailey</a><a class="block text-white/75 hover:text-white transition" href="portfolio.html">Portfolio</a><a class="block text-white/75 hover:text-white transition" href="booking.html">Book Lessons</a></div>
+      </div>
+      <div>
+        <p class="text-[10px] uppercase tracking-[.2em] font-bold text-white/50 mb-4">Lessons</p>
+        <div class="space-y-3 text-sm text-white/75"><p>30-minute private lessons</p><p>4 lessons each month</p><p>$80 monthly tuition</p><p>Recurring weekly time</p></div>
+      </div>
+    </div>
+    <div class="border-t border-white/15 mt-10 pt-6 flex flex-col sm:flex-row gap-3 justify-between text-[11px] text-white/50"><p>© 2026 Hailey's Piano Studio. All rights reserved.</p><p>Private piano instruction • One student at a time.</p></div>
+  </div>
+</footer>
+
+<script>
+(function(){const b=document.getElementById('menuButton'),m=document.getElementById('mobileMenu');if(!b||!m)return;const close=()=>{m.classList.remove('open');m.classList.add('pointer-events-none');b.setAttribute('aria-expanded','false')};b.addEventListener('click',e=>{e.stopPropagation();const o=!m.classList.contains('open');if(o){m.classList.add('open');m.classList.remove('pointer-events-none');b.setAttribute('aria-expanded','true')}else close()});document.addEventListener('click',e=>{if(m.classList.contains('open')&&!m.contains(e.target))close()});})();
+</script>
+</body>
+</html>

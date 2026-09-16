@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Hailey's Piano Studio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Lilita+One&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>tailwind.config={theme:{extend:{colors:{palette:{blue:"#98CBE8",blueHover:"#84BDDD",blueDeep:"#1E5880",blueSoft:"#EEF6FB",blueBorder:"#C5E2F3",navy:"#1B1E38",butter:"#F9DF7B",butterHover:"#F2D463",butterBorder:"#F2DC87",butterSoft:"#FFFCEB",cream:"#FAF7F2",sand:"#F0EAE1",border:"#E8E1D7",muted:"#6B6864"}},fontFamily:{display:['"Lilita One"',"cursive","sans-serif"],serif:['"Fraunces"',"Georgia","serif"],sans:['"Plus Jakarta Sans"',"sans-serif"]}}}}</script>
+
+
+
+<style>
+.mobile-menu-link{opacity:0;transform:translateX(20px)}
+#mobileMenu.open .mobile-menu-link{animation:menuItemIn .32s ease forwards}
+#mobileMenu.open .mobile-menu-link:nth-child(1){animation-delay:.05s}#mobileMenu.open .mobile-menu-link:nth-child(2){animation-delay:.12s}#mobileMenu.open .mobile-menu-link:nth-child(3){animation-delay:.19s}#mobileMenu.open .mobile-menu-link:nth-child(4){animation-delay:.26s}
+@keyframes menuItemIn{to{opacity:1;transform:translateX(0)}}
+#mobileMenuPanel{transform:translateX(115%);opacity:0;transition:transform .3s ease,opacity .22s ease}
+#mobileMenu.open #mobileMenuPanel{transform:translateX(0);opacity:1;pointer-events:auto}
+</style>
+</head>
+<body class="bg-palette-cream text-palette-navy font-sans antialiased min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 bg-palette-blueDeep border-b border-white/10 shadow-[0_5px_20px_rgba(27,30,56,.12)]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+    <a href="index.html" class="group text-white">
+      <span class="font-display text-2xl sm:text-3xl tracking-wide block leading-none">Hailey's Piano Studio</span>
+      <span class="text-[10px] tracking-widest uppercase font-semibold text-white/65 block mt-1">Private Piano Instruction</span>
+    </a>
+    <nav class="hidden md:flex items-center space-x-6 text-xs uppercase tracking-wider font-bold">
+      <a href="index.html" class="text-white transition">Home</a><a href="about.html" class="text-white/75 hover:text-white transition">About Hailey</a><a href="portfolio.html" class="text-white/75 hover:text-white transition">Portfolio</a>
+      <a href="booking.html" class="bg-palette-butter hover:bg-palette-butterHover text-palette-navy px-4 py-2.5 rounded-xl border border-palette-butterBorder shadow-sm transition">Book Lessons</a>
+    </nav>
+    <button id="menuButton" class="md:hidden w-11 h-11 rounded-xl border border-white/20 flex flex-col items-center justify-center gap-1.5 hover:bg-white/10 transition" aria-label="Open menu" aria-expanded="false">
+      <span class="w-5 h-0.5 bg-white rounded"></span><span class="w-5 h-0.5 bg-white rounded"></span><span class="w-5 h-0.5 bg-white rounded"></span>
+    </button>
+  </div>
+  <div id="mobileMenu" class="md:hidden absolute right-3 top-[72px] pointer-events-none">
+    <div id="mobileMenuPanel" class="w-64 bg-palette-blueDeep border border-white/15 rounded-2xl shadow-2xl p-2.5 overflow-hidden">
+      <nav class="space-y-1"><a href="index.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold bg-white/10 text-white">Home</a><a href="about.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold text-white/80 hover:bg-white/10 hover:text-white">About Hailey</a><a href="portfolio.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold text-white/80 hover:bg-white/10 hover:text-white">Portfolio</a><a href="booking.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold bg-palette-butter text-palette-navy hover:bg-palette-butterHover">Book Lessons →</a></nav>
+    </div>
+  </div>
+</header>
+<main class="flex-grow">
+
+  <!-- HERO -->
+  <section class="max-w-5xl mx-auto px-4 py-14 sm:py-20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+
+      <div class="md:col-span-7 space-y-5 text-left">
+        <p class="text-xs uppercase tracking-[0.2em] font-bold text-palette-blueDeep">
+          Private Piano Instruction
+        </p>
+
+        <h1 class="font-serif text-4xl lg:text-5xl text-palette-navy leading-tight">
+          A warm, creative approach to
+          <span class="font-display text-palette-blueDeep">piano lessons.</span>
+        </h1>
+
+        <p class="text-palette-muted text-base max-w-lg leading-relaxed">
+          Private lessons tailored to each student's pace, personality, and musical goals.
+          We build healthy technique, music reading fluency, and a lifelong love for playing.
+        </p>
+
+        <div class="flex flex-wrap gap-3 pt-2">
+          <a href="booking.html"
+             class="bg-palette-butter hover:bg-palette-butterHover transition duration-200 text-palette-navy font-bold px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider border border-palette-butterBorder shadow-sm">
+            Book Lessons →
+          </a>
+
+          <a href="about.html"
+             class="bg-white hover:bg-palette-blueSoft transition duration-200 text-palette-navy font-bold px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider border border-palette-blueBorder shadow-sm">
+            Meet Hailey
+          </a>
+        </div>
+      </div>
+
+      <div class="md:col-span-5 flex justify-center">
+        <div class="w-full max-w-xs sm:max-w-sm aspect-[4/5] rounded-3xl overflow-hidden shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1513883049090-d0b7439799bf?auto=format&fit=crop&w=1000&q=80"
+            alt="Piano lesson"
+            class="w-full h-full object-cover object-center"
+          >
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- QUICK STATS -->
+  <section class="bg-white border-y border-palette-border">
+    <div class="max-w-5xl mx-auto px-4 py-9">
+
+      <div class="grid grid-cols-2 lg:grid-cols-4">
+
+        <div class="text-center px-3 py-4 lg:border-r border-palette-border">
+          <p class="font-serif text-3xl text-palette-navy">30</p>
+          <p class="text-[10px] sm:text-xs uppercase tracking-wider font-bold text-palette-muted mt-1">
+            Minute Lessons
+          </p>
+        </div>
+
+        <div class="text-center px-3 py-4 lg:border-r border-palette-border">
+          <p class="font-serif text-3xl text-palette-navy">4</p>
+          <p class="text-[10px] sm:text-xs uppercase tracking-wider font-bold text-palette-muted mt-1">
+            Lessons / Month
+          </p>
+        </div>
+
+        <div class="text-center px-3 py-4 lg:border-r border-palette-border">
+          <p class="font-serif text-3xl text-palette-navy">1:1</p>
+          <p class="text-[10px] sm:text-xs uppercase tracking-wider font-bold text-palette-muted mt-1">
+            Private Instruction
+          </p>
+        </div>
+
+        <div class="text-center px-3 py-4">
+          <p class="font-serif text-3xl text-palette-navy">$80</p>
+          <p class="text-[10px] sm:text-xs uppercase tracking-wider font-bold text-palette-muted mt-1">
+            Per Month
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WHAT STUDENTS LEARN -->
+  <section class="bg-palette-cream">
+    <div class="max-w-5xl mx-auto px-4 py-20">
+
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="text-xs uppercase tracking-[0.2em] font-bold text-palette-blueDeep mb-3">
+          More Than Just Notes
+        </p>
+
+        <h2 class="font-serif text-3xl sm:text-4xl text-palette-navy">
+          Building confident musicians.
+        </h2>
+
+        <p class="text-palette-muted mt-4 leading-relaxed">
+          Lessons are designed to help students build strong musical foundations
+          while still enjoying the process of learning and playing.
+        </p>
+      </div>
+
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- CARD 1 -->
+        <div class="
+          group bg-white border border-palette-border rounded-2xl p-7
+          shadow-[0_4px_18px_rgba(27,30,56,0.06)]
+          hover:shadow-[0_14px_35px_rgba(27,30,56,0.12)]
+          hover:-translate-y-2
+          transition-all duration-300 ease-out
+        ">
+
+          <div class="
+            w-12 h-12 bg-palette-blueSoft rounded-xl
+            flex items-center justify-center mb-5
+            group-hover:scale-110 group-hover:-rotate-3
+            transition-transform duration-300
+          ">
+            <span class="text-xl">♫</span>
+          </div>
+
+          <h3 class="font-serif text-xl text-palette-navy mb-3">
+            Music Reading
+          </h3>
+
+          <p class="text-sm text-palette-muted leading-relaxed">
+            Learn to confidently read notes, rhythms, dynamics, and musical
+            markings while developing strong sight-reading habits.
+          </p>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+        <div class="
+          group bg-white border border-palette-border rounded-2xl p-7
+          shadow-[0_4px_18px_rgba(27,30,56,0.06)]
+          hover:shadow-[0_14px_35px_rgba(27,30,56,0.12)]
+          hover:-translate-y-2
+          transition-all duration-300 ease-out
+        ">
+
+          <div class="
+            w-12 h-12 bg-palette-butterSoft rounded-xl
+            flex items-center justify-center mb-5
+            group-hover:scale-110 group-hover:rotate-3
+            transition-transform duration-300
+          ">
+            <span class="text-xl">♬</span>
+          </div>
+
+          <h3 class="font-serif text-xl text-palette-navy mb-3">
+            Healthy Technique
+          </h3>
+
+          <p class="text-sm text-palette-muted leading-relaxed">
+            Build proper posture, hand position, coordination, and technique
+            that creates a strong foundation for future growth.
+          </p>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+        <div class="
+          group bg-white border border-palette-border rounded-2xl p-7
+          shadow-[0_4px_18px_rgba(27,30,56,0.06)]
+          hover:shadow-[0_14px_35px_rgba(27,30,56,0.12)]
+          hover:-translate-y-2
+          transition-all duration-300 ease-out
+        ">
+
+          <div class="
+            w-12 h-12 bg-palette-blueSoft rounded-xl
+            flex items-center justify-center mb-5
+            group-hover:scale-110 group-hover:-rotate-3
+            transition-transform duration-300
+          ">
+            <span class="text-xl">★</span>
+          </div>
+
+          <h3 class="font-serif text-xl text-palette-navy mb-3">
+            Musical Confidence
+          </h3>
+
+          <p class="text-sm text-palette-muted leading-relaxed">
+            Develop confidence through achievable goals, encouraging instruction,
+            and music that keeps students excited to practice.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- HOW LESSONS WORK -->
+  <section class="bg-white border-y border-palette-border">
+    <div class="max-w-5xl mx-auto px-4 py-20">
+
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] font-bold text-palette-blueDeep mb-3">
+            Simple & Consistent
+          </p>
+
+          <h2 class="font-serif text-3xl sm:text-4xl text-palette-navy mb-5">
+            How lessons work.
+          </h2>
+
+          <p class="text-palette-muted leading-relaxed mb-7">
+            Students meet with Hailey once each week for a private
+            30-minute lesson. Each lesson builds on the previous week,
+            with clear goals and material to practice at home.
+          </p>
+
+          <a href="booking.html"
+             class="inline-block bg-palette-navy text-white font-bold px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200">
+            View Available Times →
+          </a>
+        </div>
+
+
+        <!-- STEPS -->
+        <div class="space-y-4">
+
+          <div class="
+            group bg-white rounded-2xl p-5 border border-palette-border
+            flex gap-5 items-start
+            shadow-[0_3px_14px_rgba(27,30,56,0.05)]
+            hover:shadow-[0_10px_28px_rgba(27,30,56,0.10)]
+            hover:-translate-y-1
+            transition-all duration-300
+          ">
+            <div class="
+              bg-palette-butter w-10 h-10 rounded-full
+              flex items-center justify-center font-bold flex-shrink-0
+              group-hover:scale-110 transition-transform duration-300
+            ">
+              1
+            </div>
+
+            <div>
+              <h3 class="font-bold text-sm mb-1">
+                Choose a weekly time
+              </h3>
+              <p class="text-sm text-palette-muted">
+                Select an available 30-minute lesson time that works with your schedule.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="
+            group bg-white rounded-2xl p-5 border border-palette-border
+            flex gap-5 items-start
+            shadow-[0_3px_14px_rgba(27,30,56,0.05)]
+            hover:shadow-[0_10px_28px_rgba(27,30,56,0.10)]
+            hover:-translate-y-1
+            transition-all duration-300
+          ">
+            <div class="
+              bg-palette-butter w-10 h-10 rounded-full
+              flex items-center justify-center font-bold flex-shrink-0
+              group-hover:scale-110 transition-transform duration-300
+            ">
+              2
+            </div>
+
+            <div>
+              <h3 class="font-bold text-sm mb-1">
+                Meet once each week
+              </h3>
+              <p class="text-sm text-palette-muted">
+                Students receive four private lessons each month at their regular weekly time.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="
+            group bg-white rounded-2xl p-5 border border-palette-border
+            flex gap-5 items-start
+            shadow-[0_3px_14px_rgba(27,30,56,0.05)]
+            hover:shadow-[0_10px_28px_rgba(27,30,56,0.10)]
+            hover:-translate-y-1
+            transition-all duration-300
+          ">
+            <div class="
+              bg-palette-butter w-10 h-10 rounded-full
+              flex items-center justify-center font-bold flex-shrink-0
+              group-hover:scale-110 transition-transform duration-300
+            ">
+              3
+            </div>
+
+            <div>
+              <h3 class="font-bold text-sm mb-1">
+                Practice & progress
+              </h3>
+              <p class="text-sm text-palette-muted">
+                Students leave each lesson knowing exactly what to work on before their next lesson.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FINAL CTA -->
+  <section class="bg-palette-cream">
+    <div class="max-w-5xl mx-auto px-4 py-20">
+
+      <div class="
+        bg-palette-navy rounded-3xl px-6 sm:px-12 py-12 text-center
+        shadow-[0_12px_35px_rgba(27,30,56,0.15)]
+      ">
+
+        <p class="text-palette-butter text-xs uppercase tracking-[0.2em] font-bold mb-3">
+          Now Accepting Students
+        </p>
+
+        <h2 class="font-serif text-3xl sm:text-4xl text-white mb-4">
+          Ready to start playing?
+        </h2>
+
+        <p class="text-white/65 text-sm sm:text-base max-w-xl mx-auto mb-7 leading-relaxed">
+          Find an available weekly lesson time and take the first step toward
+          building confidence at the piano.
+        </p>
+
+        <a href="booking.html"
+           class="
+             inline-block bg-palette-butter hover:bg-palette-butterHover
+             text-palette-navy font-bold px-7 py-3.5 rounded-xl
+             text-xs uppercase tracking-wider
+             hover:-translate-y-1 hover:shadow-lg
+             transition-all duration-200
+           ">
+          Find a Lesson Time →
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="bg-palette-blueDeep text-white mt-auto border-t border-white/10">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-14">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-9 lg:gap-10">
+      <div class="sm:col-span-2 lg:col-span-2">
+        <p class="font-display text-2xl tracking-wide">Hailey's Piano Studio</p>
+        <p class="text-white/65 text-sm leading-relaxed mt-3 max-w-md">Warm, encouraging private piano instruction built around strong fundamentals, musical confidence, and a lifelong enjoyment of playing.</p>
+        <a href="booking.html" class="inline-block mt-5 bg-palette-butter hover:bg-palette-butterHover text-palette-navy font-bold px-5 py-3 rounded-xl text-xs uppercase tracking-wider transition hover:-translate-y-0.5">Find a Lesson Time →</a>
+      </div>
+      <div>
+        <p class="text-[10px] uppercase tracking-[.2em] font-bold text-white/50 mb-4">Explore</p>
+        <div class="space-y-3 text-sm"><a class="block text-white/75 hover:text-white transition" href="index.html">Home</a><a class="block text-white/75 hover:text-white transition" href="about.html">About Hailey</a><a class="block text-white/75 hover:text-white transition" href="portfolio.html">Portfolio</a><a class="block text-white/75 hover:text-white transition" href="booking.html">Book Lessons</a></div>
+      </div>
+      <div>
+        <p class="text-[10px] uppercase tracking-[.2em] font-bold text-white/50 mb-4">Lessons</p>
+        <div class="space-y-3 text-sm text-white/75"><p>30-minute private lessons</p><p>4 lessons each month</p><p>$80 monthly tuition</p><p>Recurring weekly time</p></div>
+      </div>
+    </div>
+    <div class="border-t border-white/15 mt-10 pt-6 flex flex-col sm:flex-row gap-3 justify-between text-[11px] text-white/50"><p>© 2026 Hailey's Piano Studio. All rights reserved.</p><p>Private piano instruction • One student at a time.</p></div>
+  </div>
+</footer>
+
+<script>
+(function(){const b=document.getElementById('menuButton'),m=document.getElementById('mobileMenu');if(!b||!m)return;const close=()=>{m.classList.remove('open');m.classList.add('pointer-events-none');b.setAttribute('aria-expanded','false')};b.addEventListener('click',e=>{e.stopPropagation();const o=!m.classList.contains('open');if(o){m.classList.add('open');m.classList.remove('pointer-events-none');b.setAttribute('aria-expanded','true')}else close()});document.addEventListener('click',e=>{if(m.classList.contains('open')&&!m.contains(e.target))close()});})();
+</script>
+</body>
+</html>
