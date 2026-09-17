@@ -1,401 +1,1212 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Portfolio | Hailey's Piano Studio</title>
+
 <script src="https://cdn.tailwindcss.com"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Lilita+One&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>tailwind.config={theme:{extend:{colors:{palette:{blue:"#98CBE8",blueHover:"#84BDDD",blueDeep:"#1E5880",blueSoft:"#EEF6FB",blueBorder:"#C5E2F3",navy:"#1B1E38",butter:"#F9DF7B",butterHover:"#F2D463",butterBorder:"#F2DC87",butterSoft:"#FFFCEB",cream:"#FAF7F2",sand:"#F0EAE1",border:"#E8E1D7",muted:"#6B6864"}},fontFamily:{display:['"Lilita One"',"cursive","sans-serif"],serif:['"Fraunces"',"Georgia","serif"],sans:['"Plus Jakarta Sans"',"sans-serif"]}}}}</script>
-<style>
-.mobile-menu-link{opacity:0;transform:translateX(20px)}
-#mobileMenu.open .mobile-menu-link{animation:menuItemIn .32s ease forwards}
-#mobileMenu.open .mobile-menu-link:nth-child(1){animation-delay:.05s}
-#mobileMenu.open .mobile-menu-link:nth-child(2){animation-delay:.12s}
-#mobileMenu.open .mobile-menu-link:nth-child(3){animation-delay:.19s}
-#mobileMenu.open .mobile-menu-link:nth-child(4){animation-delay:.26s}
-@keyframes menuItemIn{to{opacity:1;transform:translateX(0)}}
-#mobileMenuPanel{transform:translateX(115%);opacity:0;transition:transform .3s ease,opacity .22s ease}
-#mobileMenu.open #mobileMenuPanel{transform:translateX(0);opacity:1;pointer-events:auto}
-
-.portfolio-hero {
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  /* Desktop: move the crop upward so Hailey's upper body is visible */
-  background-position: center 60%;
-}
-.portfolio-hero-overlay{background:linear-gradient(90deg,rgba(15,18,42,.72) 0%,rgba(15,18,42,.52) 50%,rgba(15,18,42,.30) 100%)}
-@media(max-width:767px){
-  .portfolio-hero{background-position:58% 82%}
-  .portfolio-hero-overlay{background:rgba(15,18,42,.48)}
-}
-</style>
-</head>
-<body class="bg-palette-cream text-palette-navy font-sans antialiased min-h-screen flex flex-col">
-
-<header class="sticky top-0 z-50 bg-palette-blueDeep border-b border-white/10 shadow-[0_5px_20px_rgba(27,30,56,.12)]">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-    <a href="index.html" class="group text-white">
-      <span class="font-display text-2xl sm:text-3xl tracking-wide block leading-none">Hailey's Piano Studio</span>
-      <span class="text-[10px] tracking-widest uppercase font-semibold text-white/65 block mt-1">Private Piano Instruction</span>
-    </a>
-    <nav class="hidden md:flex items-center space-x-6 text-xs uppercase tracking-wider font-bold">
-      <a href="index.html" class="text-white/75 hover:text-white transition">Home</a>
-      <a href="about.html" class="text-white/75 hover:text-white transition">About Hailey</a>
-      <a href="portfolio.html" class="text-white transition">Portfolio</a>
-      <a href="booking.html" class="bg-palette-butter hover:bg-palette-butterHover text-palette-navy px-4 py-2.5 rounded-xl border border-palette-butterBorder shadow-sm transition">Book Lessons</a>
-    </nav>
-    <button id="menuButton" class="md:hidden w-11 h-11 rounded-xl border border-white/20 flex flex-col items-center justify-center gap-1.5 hover:bg-white/10 transition" aria-label="Open menu" aria-expanded="false">
-      <span class="w-5 h-0.5 bg-white rounded"></span><span class="w-5 h-0.5 bg-white rounded"></span><span class="w-5 h-0.5 bg-white rounded"></span>
-    </button>
-  </div>
-  <div id="mobileMenu" class="md:hidden absolute right-3 top-[72px] pointer-events-none">
-    <div id="mobileMenuPanel" class="w-64 bg-palette-blueDeep border border-white/15 rounded-2xl shadow-2xl p-2.5 overflow-hidden">
-      <nav class="space-y-1">
-        <a href="index.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold text-white/80 hover:bg-white/10 hover:text-white">Home</a>
-        <a href="about.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold text-white/80 hover:bg-white/10 hover:text-white">About Hailey</a>
-        <a href="portfolio.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold bg-white/10 text-white">Portfolio</a>
-        <a href="booking.html" class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold bg-palette-butter text-palette-navy hover:bg-palette-butterHover">Book Lessons →</a>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<main class="flex-grow">
-<section class="portfolio-hero relative overflow-hidden" style="background-image:url('images/recital.jpeg')">
-  <div class="absolute inset-0 portfolio-hero-overlay"></div>
-  <div class="relative z-10 max-w-5xl mx-auto px-4 py-24 sm:py-32">
-    <div class="max-w-3xl">
-      <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-butter mb-3">Portfolio</p>
-      <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight text-white">A life of <span class="font-display text-palette-blue">music & teaching.</span></h1>
-      <p class="text-white/90 mt-5 leading-relaxed max-w-2xl">A look at Hailey's experience, musical milestones, and teaching values that she brings to every student.</p>
-    </div>
-  </div>
-</section>
-
-<section class="bg-white border-y border-palette-border">
-  <div class="max-w-5xl mx-auto px-4 py-16">
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep mb-3">Highlights</p>
-      <h2 class="font-serif text-3xl sm:text-4xl">Experience that shapes the studio.</h2>
-      <p class="text-sm text-palette-muted mt-4">Use these cards for Hailey's real accomplishments, training, performances, awards, or meaningful musical milestones.</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-5">
-      <article class="group bg-palette-cream border border-palette-border rounded-2xl p-6 shadow-[0_4px_16px_rgba(27,30,56,.05)] hover:-translate-y-2 hover:shadow-[0_14px_32px_rgba(27,30,56,.11)] transition-all">
-        <span class="text-[10px] font-bold uppercase tracking-[.18em] text-palette-blueDeep">Experience</span><h3 class="font-serif text-xl mt-3">15+ Years at the Piano</h3><p class="text-sm text-palette-muted leading-relaxed mt-3">Years of consistent playing, practice, performance, and musical growth provide the foundation for each lesson.</p>
-      </article>
-      <article class="group bg-palette-cream border border-palette-border rounded-2xl p-6 shadow-[0_4px_16px_rgba(27,30,56,.05)] hover:-translate-y-2 hover:shadow-[0_14px_32px_rgba(27,30,56,.11)] transition-all">
-        <span class="text-[10px] font-bold uppercase tracking-[.18em] text-palette-blueDeep">Milestone</span><h3 class="font-serif text-xl mt-3">[Award or Accomplishment]</h3><p class="text-sm text-palette-muted leading-relaxed mt-3">Add a real recital, award, competition, certification, course, or other achievement that matters to Hailey's musical story.</p>
-      </article>
-      <article class="group bg-palette-cream border border-palette-border rounded-2xl p-6 shadow-[0_4px_16px_rgba(27,30,56,.05)] hover:-translate-y-2 hover:shadow-[0_14px_32px_rgba(27,30,56,.11)] transition-all">
-        <span class="text-[10px] font-bold uppercase tracking-[.18em] text-palette-blueDeep">Teaching</span><h3 class="font-serif text-xl mt-3">Student-Centered Lessons</h3><p class="text-sm text-palette-muted leading-relaxed mt-3">Lessons balance technique, reading, confidence, and music students enjoy so progress feels both structured and personal.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- PERFORMANCE VIDEO SECTION -->
-<section class="bg-palette-cream">
-  <div class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
-  <div class="grid lg:grid-cols-12 gap-8 lg:items-center">
-
-    <!-- On mobile this text appears FIRST. On desktop it stays on the right. -->
-    <div class="lg:col-span-5 lg:col-start-8 lg:row-start-1">
-      <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep mb-3">Performance Journal</p>
-      <h2 class="font-serif text-3xl">Hear Hailey play.</h2>
-      <p class="text-sm text-palette-muted leading-relaxed mt-4 lg:mb-6">
-        Select a performance to watch and listen to below.
-      </p>
-    </div>
-
-    <!-- On mobile this video appears SECOND. On desktop it stays on the left. -->
-    <div class="lg:col-span-7 lg:col-start-1 lg:row-start-1 mt-6 lg:mt-0">
-      <div class="overflow-hidden rounded-3xl shadow-[0_14px_35px_rgba(27,30,56,.12)] bg-palette-navy">
-        <div class="aspect-video">
-          <!--
-            DEFAULT VIDEO:
-            This starts on Hailey's first real performance instead of a piano photo.
-            To change the default video, replace kMFb1hyYXqQ below.
-            Do NOT add autoplay=1 here: that prevents the page from suddenly playing
-            sound as soon as somebody visits. Clicking a thumbnail DOES autoplay it.
-          -->
-          <iframe
-            id="portfolioVideo"
-            class="w-full h-full"
-            src="https://www.youtube-nocookie.com/embed/kMFb1hyYXqQ?playsinline=1&rel=0"
-            title="Hailey playing piano"
-            frameborder="0"
-            referrerpolicy="origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </div>
-
-    <!-- On mobile thumbnails appear THIRD, directly beneath the video. -->
-    <div class="lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:self-end mt-4 lg:mt-0 lg:pt-40">
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3">
-
-        <!-- VIDEO THUMBNAIL #1
-             Replace the YouTube ID in BOTH data-youtube-id and img src when changing it. -->
-        <button type="button"
-          class="video-thumb rounded-xl overflow-hidden border-2 border-palette-blueDeep aspect-video relative group bg-palette-navy"
-          data-youtube-id="kMFb1hyYXqQ"
-          aria-label="Play performance 1">
-          <img src="https://img.youtube.com/vi/kMFb1hyYXqQ/hqdefault.jpg" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" alt="Hailey piano performance 1">
-          <span class="absolute inset-0 flex items-center justify-center"><span class="w-10 h-10 rounded-full bg-white/90 text-palette-blueDeep flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">▶</span></span>
-        </button>
-
-        <!-- VIDEO THUMBNAIL #2 -->
-        <button type="button"
-          class="video-thumb rounded-xl overflow-hidden border-2 border-transparent aspect-video relative group bg-palette-navy"
-          data-youtube-id="0mavnQciMwg"
-          aria-label="Play performance 2">
-          <img src="https://img.youtube.com/vi/0mavnQciMwg/hqdefault.jpg" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" alt="Hailey piano performance 2">
-          <span class="absolute inset-0 flex items-center justify-center"><span class="w-10 h-10 rounded-full bg-white/90 text-palette-blueDeep flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">▶</span></span>
-        </button>
-
-        <!--
-          ADD ANOTHER VIDEO:
-          Copy one of the <button> blocks above.
-          Replace the YouTube video ID in:
-          1) data-youtube-id="..."
-          2) https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg
-        -->
-      </div>
-    </div>
-  </div>
-  </div>
-</section>
-
-<!-- NEW PHOTO CAROUSEL -->
-<section class="bg-white border-y border-palette-border">
-  <div class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
-    <div class="text-center max-w-2xl mx-auto mb-9">
-      <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep mb-3">Photo Journal</p>
-      <h2 class="font-serif text-3xl sm:text-4xl">Moments from the music.</h2>
-      <p class="text-sm text-palette-muted leading-relaxed mt-4">Flip through performances, recitals, practice sessions, and favorite moments from Hailey's musical journey.</p>
-    </div>
-
-    <div class="relative max-w-4xl mx-auto">
-      <div class="overflow-hidden rounded-3xl shadow-[0_14px_35px_rgba(27,30,56,.12)]">
-  <div class="relative h-[350px] sm:h-[450px]">
-
-    <!-- Blurred background fills any extra space -->
-    <img
-      id="photoCarouselBackground"
-      src="images/trophy.jpeg"
-      class="absolute inset-0 w-full h-full object-cover scale-110 blur-xl brightness-75 pointer-events-none"
-      alt=""
-      aria-hidden="true"
-    >
-
-    <!-- Actual image: always shows the whole photo -->
-    <img
-      id="photoCarouselImage"
-      src="images/trophy.jpeg"
-      class="relative z-10 w-full h-full object-contain transition-opacity duration-300 pointer-events-none"
-      alt="Hailey's musical journey"
-    >
-
-    <!-- Caption -->
-    <div class="absolute z-20 inset-x-0 bottom-0 bg-gradient-to-t from-palette-navy/85 to-transparent p-5 sm:p-7 text-white">
-      <p
-        id="photoCarouselCaption"
-        class="font-serif text-xl sm:text-2xl"
-      >
-        2019 Piano Competition Winner
-      </p>
-    </div>
-
-  </div>
-</div>
-
-     <button
-  id="photoPrev"
-  type="button"
-  aria-label="Previous photo"
-  class="absolute z-30 left-3 sm:-left-5 top-1/2 -translate-y-1/2 w-14 h-14 sm:w-11 sm:h-11 rounded-full bg-white/95 shadow-lg border border-palette-border flex items-center justify-center text-palette-navy text-xl hover:scale-110 transition touch-manipulation"
->
-  ‹
-</button>
-
-<button
-  id="photoNext"
-  type="button"
-  aria-label="Next photo"
-  class="absolute z-30 right-3 sm:-right-5 top-1/2 -translate-y-1/2 w-14 h-14 sm:w-11 sm:h-11 rounded-full bg-white/95 shadow-lg border border-palette-border flex items-center justify-center text-palette-navy text-xl hover:scale-110 transition touch-manipulation"
->
-  ›
-</button>
-    </div>
-
-    <div id="photoDots" class="flex justify-center gap-2 mt-5"></div>
-  </div>
-</section>
-
-<section class="bg-palette-cream border-b border-palette-border">
-  <div class="max-w-5xl mx-auto px-4 py-16">
-    <div class="grid md:grid-cols-3 gap-8">
-      <div><p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep">The Studio</p><h2 class="font-serif text-3xl mt-3">What matters here.</h2></div>
-      <div class="md:col-span-2 grid sm:grid-cols-2 gap-4">
-        <div class="bg-white rounded-2xl border border-palette-border p-5 shadow-[0_4px_16px_rgba(27,30,56,.04)]"><p class="font-bold text-sm">Strong foundations</p><p class="text-sm text-palette-muted mt-2">Technique and reading skills that support long-term independence.</p></div>
-        <div class="bg-white rounded-2xl border border-palette-border p-5 shadow-[0_4px_16px_rgba(27,30,56,.04)]"><p class="font-bold text-sm">Encouraging progress</p><p class="text-sm text-palette-muted mt-2">Clear goals without turning lessons into a high-pressure environment.</p></div>
-        <div class="bg-white rounded-2xl border border-palette-border p-5 shadow-[0_4px_16px_rgba(27,30,56,.04)]"><p class="font-bold text-sm">Individual attention</p><p class="text-sm text-palette-muted mt-2">One-on-one lessons shaped around each student's pace and needs.</p></div>
-        <div class="bg-white rounded-2xl border border-palette-border p-5 shadow-[0_4px_16px_rgba(27,30,56,.04)]"><p class="font-bold text-sm">Enjoyable music</p><p class="text-sm text-palette-muted mt-2">Room for students to discover music that keeps them excited to play.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer class="bg-palette-blueDeep text-white mt-auto border-t border-white/10">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-14">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-9 lg:gap-10">
-      <div class="sm:col-span-2 lg:col-span-2">
-        <p class="font-display text-2xl tracking-wide">Hailey's Piano Studio</p>
-        <p class="text-white/65 text-sm leading-relaxed mt-3 max-w-md">Warm, encouraging private piano instruction built around strong fundamentals, musical confidence, and a lifelong enjoyment of playing.</p>
-        <a href="booking.html" class="inline-block mt-5 bg-palette-butter hover:bg-palette-butterHover text-palette-navy font-bold px-5 py-3 rounded-xl text-xs uppercase tracking-wider transition hover:-translate-y-0.5">Find a Lesson Time →</a>
-      </div>
-      <div>
-        <p class="text-[10px] uppercase tracking-[.2em] font-bold text-white/50 mb-4">Explore</p>
-        <div class="space-y-3 text-sm"><a class="block text-white/75 hover:text-white transition" href="index.html">Home</a><a class="block text-white/75 hover:text-white transition" href="about.html">About Hailey</a><a class="block text-white/75 hover:text-white transition" href="portfolio.html">Portfolio</a><a class="block text-white/75 hover:text-white transition" href="booking.html">Book Lessons</a></div>
-      </div>
-      <div>
-        <p class="text-[10px] uppercase tracking-[.2em] font-bold text-white/50 mb-4">Lessons</p>
-        <div class="space-y-3 text-sm text-white/75"><p>30-minute private lessons</p><p>4 lessons each month</p><p>$80 monthly tuition</p><p>Recurring weekly time</p></div>
-      </div>
-    </div>
-    <div class="border-t border-white/15 mt-10 pt-6 flex flex-col sm:flex-row gap-3 justify-between text-[11px] text-white/50"><p>© 2026 Hailey's Piano Studio. All rights reserved.</p><p>Private piano instruction • One student at a time.</p></div>
-  </div>
-</footer>
 
 <script>
-/* VIDEO SELECTOR */
-const portfolioVideo = document.getElementById('portfolioVideo');
-const videoThumbs = document.querySelectorAll('.video-thumb');
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                palette: {
+                    blue: "#98CBE8",
+                    blueHover: "#84BDDD",
+                    blueDeep: "#1E5880",
+                    blueSoft: "#EEF6FB",
+                    blueBorder: "#C5E2F3",
+                    navy: "#1B1E38",
+                    butter: "#F9DF7B",
+                    butterHover: "#F2D463",
+                    butterBorder: "#F2DC87",
+                    butterSoft: "#FFFCEB",
+                    cream: "#FAF7F2",
+                    sand: "#F0EAE1",
+                    border: "#E8E1D7",
+                    muted: "#6B6864"
+                }
+            },
+
+            fontFamily: {
+                display: ['"Lilita One"', "cursive", "sans-serif"],
+                serif: ['"Fraunces"', "Georgia", "serif"],
+                sans: ['"Plus Jakarta Sans"', "sans-serif"]
+            }
+        }
+    }
+}
+</script>
+
+
+<style>
+
+/* ----------------------------------------
+   PREVENT MOBILE HORIZONTAL SCROLL
+---------------------------------------- */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+
+/* ----------------------------------------
+   MOBILE MENU
+---------------------------------------- */
+
+.mobile-menu-link {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+#mobileMenu.open .mobile-menu-link {
+    animation: menuItemIn .32s ease forwards;
+}
+
+#mobileMenu.open .mobile-menu-link:nth-child(1) {
+    animation-delay: .05s;
+}
+
+#mobileMenu.open .mobile-menu-link:nth-child(2) {
+    animation-delay: .12s;
+}
+
+#mobileMenu.open .mobile-menu-link:nth-child(3) {
+    animation-delay: .19s;
+}
+
+#mobileMenu.open .mobile-menu-link:nth-child(4) {
+    animation-delay: .26s;
+}
+
+@keyframes menuItemIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#mobileMenuPanel {
+    transform: translateX(20px);
+    opacity: 0;
+
+    transition:
+        transform .3s ease,
+        opacity .22s ease;
+}
+
+#mobileMenu.open #mobileMenuPanel {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* ----------------------------------------
+   PORTFOLIO HERO
+---------------------------------------- */
+
+.portfolio-hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* Desktop */
+    background-position: center 60%;
+}
+
+.portfolio-hero-overlay {
+    background: linear-gradient(
+        90deg,
+        rgba(15,18,42,.72) 0%,
+        rgba(15,18,42,.52) 50%,
+        rgba(15,18,42,.30) 100%
+    );
+}
+
+@media (max-width: 767px) {
+
+    .portfolio-hero {
+        background-position: 58% 82%;
+    }
+
+    .portfolio-hero-overlay {
+        background: rgba(15,18,42,.48);
+    }
+
+}
+
+</style>
+
+</head>
+
+
+
+<body class="bg-palette-cream text-palette-navy font-sans antialiased min-h-screen flex flex-col overflow-x-hidden">
+
+
+
+<!-- ========================================
+     HEADER
+========================================= -->
+
+<header class="sticky top-0 z-50 bg-palette-blueDeep border-b border-white/10 shadow-[0_5px_20px_rgba(27,30,56,.12)]">
+
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+
+
+        <!-- LOGO -->
+        <a href="index.html" class="group text-white min-w-0">
+
+            <span class="font-display text-2xl sm:text-3xl tracking-wide block leading-none">
+                Hailey's Piano Studio
+            </span>
+
+            <span class="text-[10px] tracking-widest uppercase font-semibold text-white/65 block mt-1">
+                Private Piano Instruction
+            </span>
+
+        </a>
+
+
+
+        <!-- DESKTOP NAV -->
+        <nav class="hidden md:flex items-center space-x-6 text-xs uppercase tracking-wider font-bold">
+
+            <a href="index.html"
+               class="text-white/75 hover:text-white transition">
+                Home
+            </a>
+
+            <a href="about.html"
+               class="text-white/75 hover:text-white transition">
+                About Hailey
+            </a>
+
+            <a href="portfolio.html"
+               class="text-white transition">
+                Portfolio
+            </a>
+
+            <a href="booking.html"
+               class="bg-palette-butter hover:bg-palette-butterHover text-palette-navy px-4 py-2.5 rounded-xl border border-palette-butterBorder shadow-sm transition">
+                Book Lessons
+            </a>
+
+        </nav>
+
+
+
+        <!-- MOBILE MENU BUTTON -->
+        <button
+            id="menuButton"
+            class="md:hidden shrink-0 ml-3 w-11 h-11 rounded-xl border border-white/20 flex flex-col items-center justify-center gap-1.5 hover:bg-white/10 transition"
+            aria-label="Open menu"
+            aria-expanded="false">
+
+            <span class="w-5 h-0.5 bg-white rounded"></span>
+            <span class="w-5 h-0.5 bg-white rounded"></span>
+            <span class="w-5 h-0.5 bg-white rounded"></span>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- MOBILE MENU -->
+    <div
+        id="mobileMenu"
+        class="md:hidden absolute right-3 top-[72px] pointer-events-none max-w-[calc(100vw-24px)]">
+
+        <div
+            id="mobileMenuPanel"
+            class="w-64 max-w-full bg-palette-blueDeep border border-white/15 rounded-2xl shadow-2xl p-2.5 overflow-hidden">
+
+            <nav class="space-y-1">
+
+                <a href="index.html"
+                   class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold text-white/80 hover:bg-white/10 hover:text-white">
+                    Home
+                </a>
+
+                <a href="about.html"
+                   class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold text-white/80 hover:bg-white/10 hover:text-white">
+                    About Hailey
+                </a>
+
+                <a href="portfolio.html"
+                   class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold bg-white/10 text-white">
+                    Portfolio
+                </a>
+
+                <a href="booking.html"
+                   class="mobile-menu-link block px-5 py-3.5 rounded-xl text-sm font-bold bg-palette-butter text-palette-navy hover:bg-palette-butterHover">
+                    Book Lessons →
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ========================================
+     MAIN
+========================================= -->
+
+<main class="flex-grow w-full min-w-0">
+
+
+
+<!-- ========================================
+     PORTFOLIO HERO
+========================================= -->
+
+<section
+    class="portfolio-hero relative overflow-hidden"
+    style="background-image:url('images/recital.jpeg')">
+
+    <div class="absolute inset-0 portfolio-hero-overlay"></div>
+
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 py-24 sm:py-32">
+
+        <div class="max-w-3xl">
+
+            <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-butter mb-3">
+                Portfolio
+            </p>
+
+
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-tight text-white">
+
+                A life of
+
+                <span class="font-display text-palette-blue">
+                    music & teaching.
+                </span>
+
+            </h1>
+
+
+            <p class="text-white/90 mt-5 leading-relaxed max-w-2xl">
+
+                A look at Hailey's experience, musical milestones,
+                and teaching values that she brings to every student.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     HIGHLIGHTS
+========================================= -->
+
+<section class="bg-white border-y border-palette-border">
+
+    <div class="max-w-5xl mx-auto px-4 py-16">
+
+
+        <div class="text-center max-w-2xl mx-auto mb-10">
+
+            <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep mb-3">
+                Highlights
+            </p>
+
+            <h2 class="font-serif text-3xl sm:text-4xl">
+                Experience that shapes the studio.
+            </h2>
+
+            <p class="text-sm text-palette-muted mt-4">
+                Use these cards for Hailey's real accomplishments,
+                training, performances, awards, or meaningful musical milestones.
+            </p>
+
+        </div>
+
+
+
+        <div class="grid md:grid-cols-3 gap-5">
+
+
+            <article class="group bg-palette-cream border border-palette-border rounded-2xl p-6 shadow-[0_4px_16px_rgba(27,30,56,.05)] hover:-translate-y-2 hover:shadow-[0_14px_32px_rgba(27,30,56,.11)] transition-all">
+
+                <span class="text-[10px] font-bold uppercase tracking-[.18em] text-palette-blueDeep">
+                    Experience
+                </span>
+
+                <h3 class="font-serif text-xl mt-3">
+                    15+ Years at the Piano
+                </h3>
+
+                <p class="text-sm text-palette-muted leading-relaxed mt-3">
+                    Years of consistent playing, practice, performance,
+                    and musical growth provide the foundation for each lesson.
+                </p>
+
+            </article>
+
+
+
+            <article class="group bg-palette-cream border border-palette-border rounded-2xl p-6 shadow-[0_4px_16px_rgba(27,30,56,.05)] hover:-translate-y-2 hover:shadow-[0_14px_32px_rgba(27,30,56,.11)] transition-all">
+
+                <span class="text-[10px] font-bold uppercase tracking-[.18em] text-palette-blueDeep">
+                    Milestone
+                </span>
+
+                <h3 class="font-serif text-xl mt-3">
+                    [Award or Accomplishment]
+                </h3>
+
+                <p class="text-sm text-palette-muted leading-relaxed mt-3">
+                    Add a real recital, award, competition, certification,
+                    course, or other achievement that matters to Hailey's musical story.
+                </p>
+
+            </article>
+
+
+
+            <article class="group bg-palette-cream border border-palette-border rounded-2xl p-6 shadow-[0_4px_16px_rgba(27,30,56,.05)] hover:-translate-y-2 hover:shadow-[0_14px_32px_rgba(27,30,56,.11)] transition-all">
+
+                <span class="text-[10px] font-bold uppercase tracking-[.18em] text-palette-blueDeep">
+                    Teaching
+                </span>
+
+                <h3 class="font-serif text-xl mt-3">
+                    Student-Centered Lessons
+                </h3>
+
+                <p class="text-sm text-palette-muted leading-relaxed mt-3">
+                    Lessons balance technique, reading, confidence,
+                    and music students enjoy so progress feels both structured and personal.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     PERFORMANCE VIDEO
+========================================= -->
+
+<section class="bg-palette-cream">
+
+    <div class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
+
+
+        <div class="grid lg:grid-cols-12 gap-8 lg:items-center">
+
+
+            <!-- TEXT -->
+            <div class="lg:col-span-5 lg:col-start-8 lg:row-start-1 min-w-0">
+
+                <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep mb-3">
+                    Performance Journal
+                </p>
+
+                <h2 class="font-serif text-3xl">
+                    Hear Hailey play.
+                </h2>
+
+                <p class="text-sm text-palette-muted leading-relaxed mt-4 lg:mb-6">
+                    Select a performance to watch and listen to below.
+                </p>
+
+            </div>
+
+
+
+            <!-- VIDEO -->
+            <div class="lg:col-span-7 lg:col-start-1 lg:row-start-1 mt-6 lg:mt-0 min-w-0">
+
+                <div class="overflow-hidden rounded-3xl shadow-[0_14px_35px_rgba(27,30,56,.12)] bg-palette-navy">
+
+                    <div class="aspect-video">
+
+                        <iframe
+                            id="portfolioVideo"
+                            class="w-full h-full"
+                            src="https://www.youtube-nocookie.com/embed/kMFb1hyYXqQ?playsinline=1&rel=0"
+                            title="Hailey playing piano"
+                            frameborder="0"
+                            referrerpolicy="origin"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VIDEO THUMBNAILS -->
+            <div class="lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:self-end mt-4 lg:mt-0 lg:pt-40 min-w-0">
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3">
+
+
+                    <!-- VIDEO 1 -->
+                    <button
+                        type="button"
+                        class="video-thumb rounded-xl overflow-hidden border-2 border-palette-blueDeep aspect-video relative group bg-palette-navy"
+                        data-youtube-id="kMFb1hyYXqQ"
+                        aria-label="Play performance 1">
+
+                        <img
+                            src="https://img.youtube.com/vi/kMFb1hyYXqQ/hqdefault.jpg"
+                            class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                            alt="Hailey piano performance 1"
+                        >
+
+                        <span class="absolute inset-0 flex items-center justify-center">
+
+                            <span class="w-10 h-10 rounded-full bg-white/90 text-palette-blueDeep flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                ▶
+                            </span>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- VIDEO 2 -->
+                    <button
+                        type="button"
+                        class="video-thumb rounded-xl overflow-hidden border-2 border-transparent aspect-video relative group bg-palette-navy"
+                        data-youtube-id="0mavnQciMwg"
+                        aria-label="Play performance 2">
+
+                        <img
+                            src="https://img.youtube.com/vi/0mavnQciMwg/hqdefault.jpg"
+                            class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                            alt="Hailey piano performance 2"
+                        >
+
+                        <span class="absolute inset-0 flex items-center justify-center">
+
+                            <span class="w-10 h-10 rounded-full bg-white/90 text-palette-blueDeep flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                ▶
+                            </span>
+
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     PHOTO CAROUSEL
+========================================= -->
+
+<section class="bg-white border-y border-palette-border">
+
+    <div class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
+
+
+        <div class="text-center max-w-2xl mx-auto mb-9">
+
+            <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep mb-3">
+                Photo Journal
+            </p>
+
+            <h2 class="font-serif text-3xl sm:text-4xl">
+                Moments from the music.
+            </h2>
+
+            <p class="text-sm text-palette-muted leading-relaxed mt-4">
+                Flip through performances, recitals, practice sessions,
+                and favorite moments from Hailey's musical journey.
+            </p>
+
+        </div>
+
+
+
+        <div class="relative max-w-4xl mx-auto">
+
+
+            <div class="overflow-hidden rounded-3xl shadow-[0_14px_35px_rgba(27,30,56,.12)]">
+
+                <div class="relative h-[350px] sm:h-[450px]">
+
+
+                    <!-- BLURRED BACKGROUND -->
+                    <img
+                        id="photoCarouselBackground"
+                        src="images/trophy.jpeg"
+                        class="absolute inset-0 w-full h-full object-cover scale-110 blur-xl brightness-75 pointer-events-none"
+                        alt=""
+                        aria-hidden="true"
+                    >
+
+
+                    <!-- ACTUAL IMAGE -->
+                    <img
+                        id="photoCarouselImage"
+                        src="images/trophy.jpeg"
+                        class="relative z-10 w-full h-full object-contain transition-opacity duration-300 pointer-events-none"
+                        alt="Hailey's musical journey"
+                    >
+
+
+                    <!-- CAPTION -->
+                    <div class="absolute z-20 inset-x-0 bottom-0 bg-gradient-to-t from-palette-navy/85 to-transparent p-5 sm:p-7 text-white">
+
+                        <p
+                            id="photoCarouselCaption"
+                            class="font-serif text-xl sm:text-2xl">
+
+                            2019 Piano Competition Winner
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PREVIOUS -->
+            <button
+                id="photoPrev"
+                type="button"
+                aria-label="Previous photo"
+                class="absolute z-30 left-3 sm:-left-5 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-11 sm:h-11 rounded-full bg-white/95 shadow-lg border border-palette-border flex items-center justify-center text-palette-navy text-xl hover:scale-110 transition touch-manipulation">
+
+                ‹
+
+            </button>
+
+
+
+            <!-- NEXT -->
+            <button
+                id="photoNext"
+                type="button"
+                aria-label="Next photo"
+                class="absolute z-30 right-3 sm:-right-5 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-11 sm:h-11 rounded-full bg-white/95 shadow-lg border border-palette-border flex items-center justify-center text-palette-navy text-xl hover:scale-110 transition touch-manipulation">
+
+                ›
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="photoDots"
+            class="flex justify-center gap-2 mt-5">
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     STUDIO VALUES
+========================================= -->
+
+<section class="bg-palette-cream border-b border-palette-border">
+
+    <div class="max-w-5xl mx-auto px-4 py-16">
+
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+
+            <div>
+
+                <p class="text-xs uppercase tracking-[.2em] font-bold text-palette-blueDeep">
+                    The Studio
+                </p>
+
+                <h2 class="font-serif text-3xl mt-3">
+                    What matters here.
+                </h2>
+
+            </div>
+
+
+
+            <div class="md:col-span-2 grid sm:grid-cols-2 gap-4">
+
+
+                <div class="bg-white rounded-2xl border border-palette-border p-5 shadow-[0_4px_16px_rgba(27,30,56,.04)]">
+
+                    <p class="font-bold text-sm">
+                        Strong foundations
+                    </p>
+
+                    <p class="text-sm text-palette-muted mt-2">
+                        Technique and reading skills that support long-term independence.
+                    </p>
+
+                </div>
+
+
+
+                <div class="bg-white rounded-2xl border border-palette-border p-5 shadow-[0_4px_16px_rgba(27,30,56,.04)]">
+
+                    <p class="font-bold text-sm">
+                        Encouraging progress
+                    </p>
+
+                    <p class="text-sm text-palette-muted mt-2">
+                        Clear goals without turning lessons into a high-pressure environment.
+                    </p>
+
+                </div>
+
+
+
+                <div class="bg-white rounded-2xl border border-palette-border p-5 shadow-[0_4px_16px_rgba(27,30,56,.04)]">
+
+                    <p class="font-bold text-sm">
+                        Individual attention
+                    </p>
+
+                    <p class="text-sm text-palette-muted mt-2">
+                        One-on-one lessons shaped around each student's pace and needs.
+                    </p>
+
+                </div>
+
+
+
+                <div class="bg-white rounded-2xl border border-palette-border p-5 shadow-[0_4px_16px_rgba(27,30,56,.04)]">
+
+                    <p class="font-bold text-sm">
+                        Enjoyable music
+                    </p>
+
+                    <p class="text-sm text-palette-muted mt-2">
+                        Room for students to discover music that keeps them excited to play.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- ========================================
+     FOOTER
+========================================= -->
+
+<footer class="bg-palette-blueDeep text-white mt-auto border-t border-white/10">
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-14">
+
+
+        <div class="grid md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-start">
+
+
+            <!-- STUDIO INFO -->
+            <div>
+
+
+                <!-- PORTRAIT + NAME -->
+                <div class="flex items-center gap-4">
+
+
+                    <img
+                        src="images/portrait.jpg"
+                        alt="Hailey"
+                        class="
+                            w-16 h-16 sm:w-20 sm:h-20
+                            rounded-full
+                            object-cover
+                            object-center
+                            border-2 border-white/25
+                            shadow-lg
+                            flex-shrink-0
+                        "
+                    >
+
+
+                    <div class="min-w-0">
+
+                        <p class="font-display text-2xl sm:text-3xl tracking-wide leading-tight">
+                            Hailey's Piano Studio
+                        </p>
+
+                        <p class="text-[10px] uppercase tracking-[.18em] font-semibold text-white/50 mt-1">
+                            Private Piano Instruction
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <p class="text-white/65 text-sm leading-relaxed mt-5 max-w-lg">
+
+                    Warm, encouraging private piano instruction built
+                    around strong fundamentals, musical confidence,
+                    and a lifelong enjoyment of playing.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- EXPLORE -->
+            <div class="md:min-w-[150px]">
+
+                <p class="text-[10px] uppercase tracking-[.2em] font-bold text-white/50 mb-4">
+                    Explore
+                </p>
+
+
+                <div class="space-y-3 text-sm">
+
+                    <a
+                        class="block text-white/75 hover:text-white transition"
+                        href="index.html">
+                        Home
+                    </a>
+
+                    <a
+                        class="block text-white/75 hover:text-white transition"
+                        href="about.html">
+                        About Hailey
+                    </a>
+
+                    <a
+                        class="block text-white/75 hover:text-white transition"
+                        href="portfolio.html">
+                        Portfolio
+                    </a>
+
+                    <a
+                        class="block text-white/75 hover:text-white transition"
+                        href="booking.html">
+                        Book Lessons
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BOTTOM FOOTER -->
+        <div class="
+            border-t border-white/15
+            mt-10 pt-6
+            flex flex-col sm:flex-row
+            gap-3 justify-between
+            text-[11px] text-white/50
+        ">
+
+            <p>
+                © 2026 Hailey's Piano Studio. All rights reserved.
+            </p>
+
+            <p>
+                Private piano instruction • One student at a time.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/* ========================================
+   VIDEO SELECTOR
+========================================= */
+
+const portfolioVideo =
+    document.getElementById('portfolioVideo');
+
+const videoThumbs =
+    document.querySelectorAll('.video-thumb');
+
 
 videoThumbs.forEach(button => {
-  button.addEventListener('click', () => {
-    const videoId = button.dataset.youtubeId;
-    if (!videoId) return;
 
-    videoThumbs.forEach(item => {
-      item.classList.remove('border-palette-blueDeep');
-      item.classList.add('border-transparent');
+    button.addEventListener('click', () => {
+
+        const videoId =
+            button.dataset.youtubeId;
+
+
+        if (!videoId) {
+            return;
+        }
+
+
+        videoThumbs.forEach(item => {
+
+            item.classList.remove(
+                'border-palette-blueDeep'
+            );
+
+            item.classList.add(
+                'border-transparent'
+            );
+
+        });
+
+
+        button.classList.remove(
+            'border-transparent'
+        );
+
+        button.classList.add(
+            'border-palette-blueDeep'
+        );
+
+
+        portfolioVideo.src =
+            'https://www.youtube-nocookie.com/embed/' +
+            encodeURIComponent(videoId) +
+            '?autoplay=1&playsinline=1&rel=0';
+
     });
-    button.classList.remove('border-transparent');
-    button.classList.add('border-palette-blueDeep');
 
-    // Thumbnail click is a user action, so the selected video requests autoplay.
-    portfolioVideo.src =
-      'https://www.youtube-nocookie.com/embed/' +
-      encodeURIComponent(videoId) +
-      '?autoplay=1&playsinline=1&rel=0';
-  });
 });
 
 
-/* ================================================================
+
+/* ========================================
    PHOTO CAROUSEL
-   Add, remove, or replace images here.
-   Local images work too:
-   { src: "images/hailey-recital.jpg", caption: "Spring recital" }
-   ================================================================ */
+========================================= */
+
 const photoSlides = [
-  {
-    src: "images/trophy.jpeg",
-    caption: "2019 Piano Competition Winner"
-  },
-  {
-    src: "images/recital.jpeg",
-    caption: "Recital Performance"
-  },
-  {
-    src: "images/senior.jpeg",
-    caption: "Senior Year"
-  },
-  {
-    src: "images/img1.JPG",
-    caption: "Sisters Playing Together"
-  },
-  {
-    src: "images/img2.JPG",
-    caption: "Award Winner"
-  },
-  {
-    src: "images/img3.JPG",
-    caption: "Piano Recital"
-  },
-  {
-    src: "images/img4.JPG",
-    caption: "Recital Performance"
-  },
-  {
-    src: "images/img5.PNG",
-    caption: "Piano Practice"
-  }
+
+    {
+        src: "images/trophy.jpeg",
+        caption: "2019 Piano Competition Winner"
+    },
+
+    {
+        src: "images/recital.jpeg",
+        caption: "Recital Performance"
+    },
+
+    {
+        src: "images/senior.jpeg",
+        caption: "Senior Year"
+    },
+
+    {
+        src: "images/img1.JPG",
+        caption: "Sisters Playing Together"
+    },
+
+    {
+        src: "images/img2.JPG",
+        caption: "Award Winner"
+    },
+
+    {
+        src: "images/img3.JPG",
+        caption: "Piano Recital"
+    },
+
+    {
+        src: "images/img4.JPG",
+        caption: "Recital Performance"
+    },
+
+    {
+        src: "images/img5.PNG",
+        caption: "Piano Practice"
+    }
+
 ];
 
+
 let currentPhoto = 0;
-const carouselImage = document.getElementById('photoCarouselImage');
-const carouselCaption = document.getElementById('photoCarouselCaption');
-const carouselBackground = document.getElementById('photoCarouselBackground');
-const photoDots = document.getElementById('photoDots');
+
+
+const carouselImage =
+    document.getElementById('photoCarouselImage');
+
+const carouselCaption =
+    document.getElementById('photoCarouselCaption');
+
+const carouselBackground =
+    document.getElementById('photoCarouselBackground');
+
+const photoDots =
+    document.getElementById('photoDots');
+
+
 
 function buildDots() {
-  photoDots.innerHTML = '';
-  photoSlides.forEach((_, index) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.setAttribute('aria-label', 'View photo ' + (index + 1));
-    dot.className = 'w-2.5 h-2.5 rounded-full transition-all ' +
-      (index === currentPhoto ? 'bg-palette-blueDeep w-7' : 'bg-palette-blueBorder');
-    dot.addEventListener('click', () => showPhoto(index));
-    photoDots.appendChild(dot);
-  });
+
+    photoDots.innerHTML = '';
+
+
+    photoSlides.forEach((_, index) => {
+
+        const dot =
+            document.createElement('button');
+
+
+        dot.type = 'button';
+
+
+        dot.setAttribute(
+            'aria-label',
+            'View photo ' + (index + 1)
+        );
+
+
+        dot.className =
+            'w-2.5 h-2.5 rounded-full transition-all ' +
+            (
+                index === currentPhoto
+                    ? 'bg-palette-blueDeep w-7'
+                    : 'bg-palette-blueBorder'
+            );
+
+
+        dot.addEventListener(
+            'click',
+            () => showPhoto(index)
+        );
+
+
+        photoDots.appendChild(dot);
+
+    });
+
 }
+
+
 
 function showPhoto(index) {
-  currentPhoto = (index + photoSlides.length) % photoSlides.length;
 
-  carouselImage.style.opacity = '0';
+    currentPhoto =
+        (index + photoSlides.length) %
+        photoSlides.length;
 
-  setTimeout(() => {
-    const newImage = photoSlides[currentPhoto].src;
 
-    carouselImage.src = newImage;
-    carouselBackground.src = newImage;
-    carouselCaption.textContent = photoSlides[currentPhoto].caption;
+    carouselImage.style.opacity = '0';
 
-    carouselImage.style.opacity = '1';
 
-    buildDots();
-  }, 180);
+    setTimeout(() => {
+
+        const newImage =
+            photoSlides[currentPhoto].src;
+
+
+        carouselImage.src =
+            newImage;
+
+        carouselBackground.src =
+            newImage;
+
+        carouselCaption.textContent =
+            photoSlides[currentPhoto].caption;
+
+
+        carouselImage.style.opacity =
+            '1';
+
+
+        buildDots();
+
+    }, 180);
+
 }
 
-document.getElementById('photoPrev').addEventListener('click', () => showPhoto(currentPhoto - 1));
-document.getElementById('photoNext').addEventListener('click', () => showPhoto(currentPhoto + 1));
+
+
+document
+    .getElementById('photoPrev')
+    .addEventListener(
+        'click',
+        () => showPhoto(currentPhoto - 1)
+    );
+
+
+document
+    .getElementById('photoNext')
+    .addEventListener(
+        'click',
+        () => showPhoto(currentPhoto + 1)
+    );
+
+
 buildDots();
 
 
-/* MOBILE NAVIGATION */
-(function(){
-  const b=document.getElementById('menuButton'),m=document.getElementById('mobileMenu');
-  if(!b||!m)return;
-  const close=()=>{m.classList.remove('open');m.classList.add('pointer-events-none');b.setAttribute('aria-expanded','false')};
-  b.addEventListener('click',e=>{
-    e.stopPropagation();
-    const o=!m.classList.contains('open');
-    if(o){m.classList.add('open');m.classList.remove('pointer-events-none');b.setAttribute('aria-expanded','true')}
-    else close()
-  });
-  document.addEventListener('click',e=>{if(m.classList.contains('open')&&!m.contains(e.target))close()});
+
+/* ========================================
+   MOBILE NAVIGATION
+========================================= */
+
+(function () {
+
+    const button =
+        document.getElementById('menuButton');
+
+    const menu =
+        document.getElementById('mobileMenu');
+
+
+    if (!button || !menu) {
+        return;
+    }
+
+
+    const closeMenu = () => {
+
+        menu.classList.remove('open');
+
+        menu.classList.add(
+            'pointer-events-none'
+        );
+
+        button.setAttribute(
+            'aria-expanded',
+            'false'
+        );
+
+    };
+
+
+    button.addEventListener(
+        'click',
+        event => {
+
+            event.stopPropagation();
+
+
+            const shouldOpen =
+                !menu.classList.contains('open');
+
+
+            if (shouldOpen) {
+
+                menu.classList.add('open');
+
+                menu.classList.remove(
+                    'pointer-events-none'
+                );
+
+                button.setAttribute(
+                    'aria-expanded',
+                    'true'
+                );
+
+            } else {
+
+                closeMenu();
+
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        'click',
+        event => {
+
+            if (
+                menu.classList.contains('open') &&
+                !menu.contains(event.target)
+            ) {
+
+                closeMenu();
+
+            }
+
+        }
+    );
+
 })();
+
+
 </script>
+
+
 </body>
 </html>
