@@ -366,9 +366,44 @@ tailwind.config = {
     <form
         id="lessonForm"
         class="space-y-8"
+        action="https://formspree.io/f/mppwwbra"
+        method="POST"
         onsubmit="submitForm(event)"
     >
 
+
+        <!--
+            ================================================================
+            AVAILABLE TIME SLOT EDITING GUIDE
+
+            To REMOVE a time:
+            Delete only the matching <button class="time-slot">...</button>
+            inside that day's .day-times section.
+
+            To ADD a time:
+            Duplicate one complete .time-slot button in that day's .day-times
+            section, change the visible time, and update data-value to match.
+
+            To ADD or REMOVE an entire day:
+            Duplicate or delete one complete START/END day availability block
+            below. Change the day name and every data-value inside the copy.
+
+            Keep these parts on every available-time button:
+            - type="button"
+            - class="time-slot"
+            - data-value="..."
+
+            The JavaScript automatically finds every .time-slot button, so
+            changing this list will not break the Formspree form. Formspree
+            receives the selected data-value as the lesson_time field.
+            ================================================================
+        -->
+
+        <input
+            type="hidden"
+            name="_subject"
+            value="New Piano Lesson Request"
+        >
 
         <!-- WEEKLY CALENDAR -->
         <section class="playful-card bg-white border border-palette-border rounded-2xl p-5 sm:p-8 shadow-[0_4px_18px_rgba(27,30,56,0.06)]">
@@ -414,7 +449,7 @@ tailwind.config = {
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
 
 
-                <!-- MONDAY -->
+                <!-- START: MONDAY AVAILABILITY BLOCK -->
                 <div class="day-card border border-palette-border rounded-2xl overflow-hidden">
 
                     <button
@@ -458,10 +493,11 @@ tailwind.config = {
                     </div>
 
                 </div>
+                <!-- END: MONDAY AVAILABILITY BLOCK -->
 
 
 
-                <!-- TUESDAY -->
+                <!-- START: TUESDAY AVAILABILITY BLOCK -->
                 <div class="day-card border border-palette-border rounded-2xl overflow-hidden">
 
                     <button
@@ -505,10 +541,11 @@ tailwind.config = {
                     </div>
 
                 </div>
+                <!-- END: TUESDAY AVAILABILITY BLOCK -->
 
 
 
-                <!-- WEDNESDAY -->
+                <!-- START: WEDNESDAY AVAILABILITY BLOCK -->
                 <div class="day-card border border-palette-border rounded-2xl overflow-hidden">
 
                     <button
@@ -552,10 +589,11 @@ tailwind.config = {
                     </div>
 
                 </div>
+                <!-- END: WEDNESDAY AVAILABILITY BLOCK -->
 
 
 
-                <!-- THURSDAY -->
+                <!-- START: THURSDAY AVAILABILITY BLOCK -->
                 <div class="day-card border border-palette-border rounded-2xl overflow-hidden">
 
                     <button
@@ -599,10 +637,11 @@ tailwind.config = {
                     </div>
 
                 </div>
+                <!-- END: THURSDAY AVAILABILITY BLOCK -->
 
 
 
-                <!-- FRIDAY -->
+                <!-- START: FRIDAY AVAILABILITY BLOCK -->
                 <div class="day-card border border-palette-border rounded-2xl overflow-hidden">
 
                     <button
@@ -646,6 +685,32 @@ tailwind.config = {
                     </div>
 
                 </div>
+                <!-- END: FRIDAY AVAILABILITY BLOCK -->
+
+            </div>
+
+
+            <!-- FLEXIBLE SCHEDULING OPTION -->
+            <div class="mt-5 rounded-xl border border-palette-blueBorder bg-palette-blueSoft p-4">
+
+                <label for="flexibleTime" class="flex items-start gap-3 cursor-pointer">
+
+                    <input
+                        type="checkbox"
+                        id="flexibleTime"
+                        name="flexible_time"
+                        value="Yes"
+                        class="mt-0.5 h-4 w-4 shrink-0 accent-palette-blueDeep"
+                    >
+
+                    <span class="text-sm leading-relaxed">
+                        <span class="font-bold">(Optional) None of these times work for me.</span>
+                        <span class="block text-xs text-palette-muted mt-1">
+                            I can be flexible and work out another time with you!
+                        </span>
+                    </span>
+
+                </label>
 
             </div>
 
@@ -700,11 +765,11 @@ tailwind.config = {
                 </p>
 
                 <h2 class="font-serif text-2xl">
-                    Tell us about the student
+                    Tell me about the student
                 </h2>
 
                 <p class="text-xs text-palette-muted mt-1">
-                    This helps Hailey prepare lessons that fit the student's experience and goals.
+                    This helps me prepare lessons that fit the student's experience and goals.
                 </p>
 
             </div>
@@ -962,7 +1027,7 @@ tailwind.config = {
 
                     <p class="text-xs text-palette-muted mt-1">
                         Weekly private 30-minute lessons at the selected recurring day/time,
-                        billed monthly on the 1st of each month.
+                        billed monthly on the 1st of each month (you will not be billed yet... I will be in touch to solidify our plans!).
                     </p>
 
                 </div>
@@ -991,6 +1056,22 @@ tailwind.config = {
                 <p class="text-xs leading-relaxed">
                     Thank you! Hailey will reach out to confirm your recurring weekly
                     lesson time and complete your registration.
+                </p>
+
+            </div>
+
+
+            <!-- FORM ERROR MESSAGE -->
+            <div
+                id="errorMsg"
+                class="hidden mt-5 p-4 rounded-xl bg-red-50 border border-red-200 text-sm text-red-700">
+
+                <p class="font-bold mb-1">
+                    Something went wrong.
+                </p>
+
+                <p class="text-xs leading-relaxed">
+                    Your request could not be sent. Please try again or contact Hailey directly.
                 </p>
 
             </div>
@@ -1149,11 +1230,16 @@ tailwind.config = {
     const selectedTimeDisplay = document.getElementById("selectedTimeDisplay");
     const selectedTimeText = document.getElementById("selectedTimeText");
     const slotError = document.getElementById("slotError");
+    const flexibleTimeCheckbox = document.getElementById("flexibleTime");
 
 
     timeSlots.forEach(slot => {
 
         slot.addEventListener("click", () => {
+
+            // Choosing a listed time turns off the flexible scheduling option
+            flexibleTimeCheckbox.checked = false;
+            selectedSlotInput.setAttribute("required", "");
 
             // Remove selected styling from all slots
             timeSlots.forEach(item => {
@@ -1179,6 +1265,32 @@ tailwind.config = {
             slotError.classList.add("hidden");
 
         });
+
+    });
+
+
+    flexibleTimeCheckbox.addEventListener("change", () => {
+
+        if (flexibleTimeCheckbox.checked) {
+
+            // Clear any selected slot because the user requested a different time
+            timeSlots.forEach(item => {
+                item.classList.remove("selected");
+            });
+
+            selectedSlotInput.value = "Flexible schedule requested";
+            selectedSlotInput.removeAttribute("required");
+            selectedTimeText.textContent = "Flexible schedule requested — please contact me to arrange a time.";
+            selectedTimeDisplay.classList.remove("hidden");
+            slotError.classList.add("hidden");
+
+        } else {
+
+            selectedSlotInput.value = "";
+            selectedSlotInput.setAttribute("required", "");
+            selectedTimeDisplay.classList.add("hidden");
+
+        }
 
     });
 
@@ -1244,9 +1356,12 @@ tailwind.config = {
        FORM SUBMISSION
     -------------------------------------------------- */
 
-    function submitForm(event) {
+    async function submitForm(event) {
 
         event.preventDefault();
+
+        const form = event.target;
+        const submitButton = form.querySelector('button[type="submit"]');
 
 
         // Make sure a time was selected
@@ -1279,23 +1394,55 @@ tailwind.config = {
 
 
         // Use native HTML validation
-        if (!event.target.checkValidity()) {
+        if (!form.checkValidity()) {
 
-            event.target.reportValidity();
+            form.reportValidity();
             return;
 
         }
 
 
-        // Temporary success message
-        // Replace this later with Formspree submission
-        document.getElementById("msg").classList.remove("hidden");
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
 
+        try {
 
-        document.getElementById("msg").scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: {
+                    Accept: "application/json"
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error("Formspree submission failed.");
+            }
+
+            document.getElementById("errorMsg").classList.add("hidden");
+            document.getElementById("msg").classList.remove("hidden");
+
+            document.getElementById("msg").scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        } catch (error) {
+
+            const errorMessage = document.getElementById("errorMsg");
+            errorMessage.classList.remove("hidden");
+
+            errorMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        } finally {
+
+            submitButton.disabled = false;
+            submitButton.textContent = "Request Lesson Time →";
+
+        }
 
     }
 
